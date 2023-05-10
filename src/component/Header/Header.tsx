@@ -1,12 +1,17 @@
+import { Link } from "react-router-dom";
 import "./Header.css";
 export const Header = () => {
   return (
     <header>
       <div className="header-wrapper">
-        <div className="logo">JASTERIA</div>
+        <Link to="/">
+          <div className="logo">JASTERIA</div>
+        </Link>
         <nav>
           <li className="nav-item">О бренде</li>
-          <li className="nav-item">Каталог</li>
+          <Link to="/catalog" className="nav-item">
+            Каталог
+          </Link>
           <li className="nav-item">Обратная связь</li>
           <li className="nav-item">FAQ</li>
         </nav>

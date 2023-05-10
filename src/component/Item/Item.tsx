@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Item.css";
-import { Modal } from "./Modal/Modal";
+import { Modal } from "../Modal/Modal";
 export type ItemProps = {
   imageUrl: string;
   title: string;

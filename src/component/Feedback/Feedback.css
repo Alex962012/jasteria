@@ -1,0 +1,41 @@
+.feedback-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.feedback-form-container {
+  width: 45%;
+}
+.feedback-form-title {
+  color: var(--price-color);
+  font-weight: 600;
+}
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+}
+.feedback-form-input {
+  font-weight: 400;
+  margin: 10px 0;
+  padding: 10px;
+  border: 2px solid var(--price-color);
+  border-radius: 15px;
+}
+.bg {
+  padding-top: 0px;
+  height: 50px;
+}
+.feedback-form-button {
+  padding: 10px;
+  background-color: var(--price-color);
+  color: white;
+  border-radius: 25px;
+  width: 35%;
+}
+.image-container {
+  width: 50%;
+  height: 320px;
+  background-image: url("https://nimble-needles.com/wp-content/uploads/2021/12/a-couple-of-easy-projects-for-knitting-beginners-e1639654555354.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}

@@ -13,6 +13,10 @@
   height: 380px;
   object-fit: cover;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+.item-picture:hover {
+  transform: scale(1.01);
 }
 .item-name {
   color: var(--price-color);
