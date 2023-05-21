@@ -1,9 +1,10 @@
 import { Item, ItemProps } from "../../component/Item/Item";
 import { SessionCollectionProps } from "../../component/SessonCollection/SessonCollection";
+import Skeleton from "../../component/Skeleton/Skeleton";
 import { ItemsProps } from "../Home/Home";
 import "./Catalog.css";
 
-export const Catalog = ({ items }: ItemsProps) => {
+export const Catalog = ({ items, isLoading }: ItemsProps) => {
   let res: ItemProps[] = [];
   items.map((el: SessionCollectionProps) => res.push(...el.items));
   return (
@@ -12,9 +13,11 @@ export const Catalog = ({ items }: ItemsProps) => {
         Вы можете заказать любое изделие из каталога по своим меркам
       </div>
       <div className="content-order">
-        {res.map((item: ItemProps, index) => (
-          <Item {...item} key={index} />
-        ))}
+        {isLoading
+          ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+          : res.map((item: ItemProps, index: number) => (
+              <Item {...item} key={index} />
+            ))}
       </div>
     </div>
   );

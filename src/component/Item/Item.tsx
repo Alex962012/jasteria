@@ -2,13 +2,14 @@ import { useState } from "react";
 import "./Item.css";
 import { Modal } from "../Modal/Modal";
 export type ItemProps = {
+  id: number;
   imageUrl: string;
   title: string;
-  price: string;
-  id: number;
+  price: number;
+  category: number;
   images: Array<string>;
   description: string;
-  category: number;
+  typeOfYarn: string;
 };
 export const Item = ({
   imageUrl,

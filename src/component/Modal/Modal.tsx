@@ -6,7 +6,7 @@ type ModalProps = {
   title: string;
   images: Array<string>;
   description: string;
-  price: string;
+  price: number;
 };
 export const Modal = ({
   active,

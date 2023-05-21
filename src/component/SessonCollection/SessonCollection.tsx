@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
 import { Item, ItemProps } from "../Item/Item";
 import "./SessonCollection.css";
+import Skeleton from "../Skeleton/Skeleton";
 export type SessionCollectionProps = {
   category: number;
   items: Array<ItemProps>;
 };
 const categoryGrosery = ["Зимняя коллекция", "Коллекция осень/весна"];
-export const SessionCollection = ({
-  category,
-  items,
-}: SessionCollectionProps) => {
+export const SessionCollection = ({ category, items, isLoading }: any) => {
   return (
     <div className="session-container">
       <div className="session-title-container">
@@ -31,9 +29,11 @@ export const SessionCollection = ({
         </Link>
       </div>
       <div className="item-session-container">
-        {items.map((item: ItemProps, index: number) =>
-          index > 2 ? "" : <Item {...item} key={index} />
-        )}
+        {isLoading
+          ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+          : items.map((item: ItemProps, index: number) =>
+              index > 2 ? "" : <Item {...item} key={index} />
+            )}
       </div>
     </div>
   );
