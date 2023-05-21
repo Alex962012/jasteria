@@ -4,16 +4,22 @@ export const Header = () => {
   return (
     <header>
       <div className="header-wrapper">
-        <Link to="/">
-          <div className="logo">JASTERIA</div>
+        <Link to="/" className="logo-container">
+          <div className="logo"></div>
         </Link>
         <nav>
-          <li className="nav-item">О бренде</li>
           <Link to="/catalog" className="nav-item">
             Каталог
           </Link>
-          <li className="nav-item">Обратная связь</li>
-          <li className="nav-item">FAQ</li>
+          <Link to="/about" className="nav-item">
+            О бренде
+          </Link>
+          <Link to="/faq" className="nav-item">
+            FAQ
+          </Link>
+          <li className="nav-item">
+            <Link to="/feedback">Обратная связь</Link>
+          </li>
         </nav>
         <div className="number">
           <svg

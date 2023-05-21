@@ -4,11 +4,20 @@ import { Modal } from "../Modal/Modal";
 export type ItemProps = {
   imageUrl: string;
   title: string;
-  price: number;
+  price: string;
   id: number;
+  images: Array<string>;
+  description: string;
   category: number;
 };
-export const Item = ({ imageUrl, title, price }: ItemProps) => {
+export const Item = ({
+  imageUrl,
+  title,
+  price,
+  images,
+  id,
+  description,
+}: ItemProps) => {
   const [like, setLike] = useState(false);
   const [active, setActive] = useState(false);
   const onClickLike = () => {
@@ -32,8 +41,16 @@ export const Item = ({ imageUrl, title, price }: ItemProps) => {
           onClick={() => onClickLike()}
         ></div>
       </div>
-      <div className="item-price">{price} $</div>
-      <Modal active={active} setActive={setActive} title={title}></Modal>
+      <div className="item-price">{price} руб.</div>
+      <Modal
+        key={id}
+        active={active}
+        setActive={setActive}
+        title={title}
+        images={images}
+        description={description}
+        price={price}
+      />
     </div>
   );
 };

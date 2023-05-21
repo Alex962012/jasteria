@@ -1,0 +1,17 @@
+.order-section {
+  width: 100%;
+  margin: 0 auto;
+}
+.order-section--title {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+  color: var(--main-br-color);
+  font-size: 24px;
+}
+.content-order {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

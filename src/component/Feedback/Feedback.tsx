@@ -1,7 +1,7 @@
 import "./Feedback.css";
 export const Feedback = () => {
   return (
-    <div className="feedback-container">
+    <div className="feedback-container" id="feedback">
       <div className="feedback-form-container">
         <h3 className="feedback-form-title">
           Для заказа или консультации заполните форму, и мы с Вами свяжемся с
@@ -11,19 +11,19 @@ export const Feedback = () => {
           <input
             type="text"
             className="feedback-form-input"
-            placeholder="First name"
+            placeholder="Имя"
           />
           <input
             type="text"
             className="feedback-form-input"
-            placeholder="Email"
+            placeholder="Предпочитаемый способ связи и контакты"
           />
           <input
             type="text"
             className="feedback-form-input bg"
-            placeholder="Describe your wishes..."
+            placeholder="Комментарий..."
           />
-          <button className="feedback-form-button">SEND MESSAGE</button>
+          <button className="feedback-form-button">Отправить сообщение</button>
         </form>
       </div>
       <div className="image-container"></div>

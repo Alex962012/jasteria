@@ -5,30 +5,44 @@ header {
   border-radius: 20px 20px 0 0;
 }
 .header-wrapper {
-  padding-top: 20px;
   width: 80%;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
   justify-content: space-between;
 }
-
+.logo {
+  background-image: url("./logo.png");
+  background-size: contain;
+  width: 15em;
+  height: 70px;
+  background-repeat: no-repeat;
+}
+.logo:hover {
+  opacity: 0.7;
+}
 nav {
-  width: 65%;
+  padding-top: 30px;
+  margin: 0 0 0 -60px;
+  width: 60%;
   display: flex;
   justify-content: space-between;
 }
 .nav-item {
   color: var(--price-color);
   font-weight: 600;
+  font-family: "Outfit", sans-serif;
 }
-
+.nav-item:hover {
+  opacity: 0.7;
+}
 li {
   list-style: none;
   cursor: pointer;
 }
 
 .number {
+  padding-top: 25px;
   display: flex;
 }
 .number-icon {
