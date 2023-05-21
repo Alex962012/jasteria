@@ -1,11 +1,11 @@
 import { Item, ItemProps } from "../../component/Item/Item";
 import { SessionCollectionProps } from "../../component/SessonCollection/SessonCollection";
+import { ItemsProps } from "../Home/Home";
 import "./Catalog.css";
-const items = require("../../items.json");
-let res: ItemProps[] = [];
-items.map((el: SessionCollectionProps) => res.push(...el.items));
 
-export const Catalog = () => {
+export const Catalog = ({ items }: ItemsProps) => {
+  let res: ItemProps[] = [];
+  items.map((el: SessionCollectionProps) => res.push(...el.items));
   return (
     <div className="order-section">
       <div className="order-section--title">
