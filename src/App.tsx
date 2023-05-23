@@ -51,7 +51,7 @@ function App() {
         <div className="title-section">
           <Routes>
             <Route
-              path="/#"
+              path="/"
               element={<Home items={items} isLoading={isLoading} />}
             />
             <Route
