@@ -22,7 +22,7 @@
   /* padding: 0 40px 40px 40px; */
   border-radius: 12px;
   background-color: white;
-  width: 1200px;
+  width: 1100px;
   margin: 0 auto;
   display: flex;
 }
@@ -69,22 +69,44 @@
 
 .modal-title {
   font-size: 24px;
-  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .modal-price {
   font-size: 24px;
-  font-family: "Outfit", sans-serif;
-  font-weight: 600;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
   padding: 20px 0;
 }
 
 .modal-description {
-  font-family: "Outfit", sans-serif;
+  font-family: "EB Garamond", serif;
   font-size: 24px;
+  /* font-weight: 700; */
   text-align: justify;
+  color: var(--price-color);
+}
+.modal-button-order {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 250px;
+  height: 50px;
+  background-color: var(--price-color);
+  color: white;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--price-color);
+  align-items: center;
 }
 
+.modal-button-order:hover {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+}
 .close-modal-icon {
   width: 24px;
   height: 24px;
@@ -99,7 +121,7 @@
   display: flex;
   position: relative;
   padding-top: 25px;
-  left: 85%;
+  left: 92.5%;
 }
 
 .close-modal:hover {

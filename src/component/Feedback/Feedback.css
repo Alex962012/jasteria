@@ -26,16 +26,23 @@
   height: 50px;
 }
 .feedback-form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   background-color: var(--price-color);
   color: white;
   border-radius: 25px;
+  font-size: 12px;
   width: 35%;
   cursor: pointer;
+  border: 1px solid var(--price-color);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 .feedback-form-button:hover {
   color: black;
   background-color: white;
+  border: 1px solid black;
 }
 .image-container {
   width: 50%;

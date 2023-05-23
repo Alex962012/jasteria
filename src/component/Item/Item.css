@@ -20,16 +20,16 @@
 }
 .item-name {
   color: var(--price-color);
-  font-size: 16px;
+  font-size: 26px;
   font-weight: 600;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Cormorant Garamond", serif;
 }
 .item-price {
   color: var(--price-color);
   font-size: 20px;
   font-weight: 600;
   padding: 0 0 0 1px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Cormorant Garamond", serif;
 }
 .item-like {
   background-image: url("https://cdn4.iconfinder.com/data/icons/basic-ui-2-line/32/heart-love-like-likes-loved-favorite-512.png");

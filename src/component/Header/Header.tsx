@@ -17,9 +17,9 @@ export const Header = () => {
           <Link to="/faq" className="nav-item">
             FAQ
           </Link>
-          <li className="nav-item">
-            <Link to="/feedback">Обратная связь</Link>
-          </li>
+          <Link to="/feedback" className="nav-item">
+            Обратная связь
+          </Link>
         </nav>
         <div className="number">
           <svg

@@ -53,7 +53,7 @@ export const Modal = ({
             <div className="modal-title">{title}</div>
             <div className="modal-price">{price} руб.</div>
             <div className="modal-description">{description}</div>
-            <div className="">Заказать</div>
+            <div className="modal-button-order">Заказать</div>
           </div>
         </div>
       </div>
