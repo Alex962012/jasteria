@@ -22,13 +22,13 @@
   /* padding: 0 40px 40px 40px; */
   border-radius: 12px;
   background-color: white;
-  width: 1100px;
+  width: 70%;
   margin: 0 auto;
   display: flex;
 }
 
 .slider-img {
-  width: 450px;
+  max-width: 450px;
   background-repeat: no-repeat;
   border-radius: 12px 0px 0 12px;
   background-size: contain;
@@ -42,7 +42,7 @@
 }
 
 .slider-container {
-  width: 450px;
+  max-width: 450px;
 }
 
 .slider-container:hover .button {
@@ -64,17 +64,17 @@
 }
 
 .modal-description-container {
-  padding: 40px;
+  padding: 20px 40px;
 }
 
 .modal-title {
-  font-size: 24px;
+  font-size: 1.4em;
   font-weight: 700;
   font-family: "Cormorant Garamond", serif;
 }
 
 .modal-price {
-  font-size: 24px;
+  font-size: 1.4em;
   font-family: "Cormorant Garamond", serif;
   font-weight: 700;
   padding: 20px 0;
@@ -82,7 +82,7 @@
 
 .modal-description {
   font-family: "EB Garamond", serif;
-  font-size: 24px;
+  font-size: 1.4em;
   /* font-weight: 700; */
   text-align: justify;
   color: var(--price-color);
@@ -127,4 +127,32 @@
 .close-modal:hover {
   cursor: pointer;
   opacity: 0.7;
+}
+@media only screen and (max-width: 1200px) {
+  .modal-container {
+    width: 80%;
+  }
+  .modal-description-container {
+    padding: 10px 30px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .modal-container {
+    width: 80%;
+  }
+  .modal-description-container {
+    padding: 8px;
+  }
+  .close-modal {
+    left: 86%;
+    padding-top: 20px;
+  }
+  .modal-description {
+    font-size: 1em;
+  }
+  .slider-img {
+    max-width: 350px;
+    height: 466px;
+  }
 }

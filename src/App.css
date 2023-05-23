@@ -6,7 +6,7 @@
 }
 
 .wrapper {
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
   border: 2px solid var(--price-color);
   border-radius: 20px;
@@ -23,4 +23,24 @@ a {
 }
 .title-section--subtitle {
   grid-area: subtitle;
+}
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    max-width: 992px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 768px;
+  }
+}
+@media only screen and (max-width: 480px) {
+}
+@media only screen and (max-width: 320px) {
 }
