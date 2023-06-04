@@ -285,24 +285,50 @@
   }
 }
 @media only screen and (max-width: 568px) {
+  .modal {
+    align-items: flex-start;
+    top: -10%;
+  }
   .modal-container {
     flex-direction: column;
     width: 70%;
     height: 90%;
   }
+  .slider-container {
+    width: 400px;
+    max-width: 400px;
+  }
   .close-modal-container {
     z-index: 3;
     width: 40px;
     position: absolute;
-    top: 20%;
-    left: 30%;
+    top: 18%;
+    left: 75%;
   }
   .window {
-    height: 350px;
+    height: 340px;
+  }
+  .slider-img {
+    max-width: 400px;
+    height: 340px;
+  }
+  .right-button {
+    margin-left: 62vw;
+  }
+}
+@media only screen and (max-width: 538px) {
+  .slider-img {
+    max-width: 69vw;
+  }
+}
+@media only screen and (max-width: 493px) {
+  .slider-img {
+    max-width: 70vw;
   }
 }
 @media only screen and (max-width: 480px) {
   .modal {
+    align-items: center;
     z-index: 2;
   }
   .slider-container {
@@ -324,11 +350,7 @@
     height: 300px;
     max-width: 400px;
   }
-  .modal {
-    overflow: auto;
-    /* align-items: start; */
-    padding-top: 10px;
-  }
+
   .modal-content-container {
     max-width: 400px;
     height: 300px;
@@ -346,10 +368,76 @@
     align-items: center;
     width: 50px;
     height: 50px;
-
     border-radius: 100%;
-
     background-color: white;
+  }
+  .right-button {
+    margin-left: 72vw;
+    top: 40%;
+  }
+  .left-button {
+    top: 40%;
+  }
+}
+@media only screen and (max-width: 442px) {
+  .close-modal-container {
+    left: 82%;
+  }
+  .modal-container {
+    width: 380px;
+  }
+  .right-button {
+    margin-left: 75vw;
+  }
+  .window {
+    width: 380px;
+    max-width: 380px;
+  }
+  .slider-container {
+    width: 380px;
+    max-width: 380px;
+  }
+}
+@media only screen and (max-width: 427px) {
+  .close-modal-container {
+    left: 84%;
+  }
+  .right-button {
+    margin-left: 77vw;
+  }
+  .slider-img {
+    width: 380px;
+  }
+}
+@media only screen and (max-width: 405px) {
+  .right-button {
+    margin: 0;
+    left: 84%;
+  }
+  .button {
+    background-color: transparent;
+  }
+}
+@media only screen and (max-width: 386px) {
+  .modal-container {
+    width: 90%;
+  }
+  .slider-container {
+    width: 90%;
+    max-width: 90%;
+  }
+  .slider-img {
+    width: 92vw;
+  }
+}
+@media only screen and (max-width: 368px) {
+  .modal-container {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 348px) {
+  .modal-title {
+    text-align: center;
   }
 }
 @media only screen and (max-width: 320px) {
