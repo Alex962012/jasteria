@@ -20,7 +20,7 @@ export const SliderForHome = () => {
     "https://plugins-media.makeupar.com/smb/blog/post/2021-09-03/69e15545-d157-44bd-9b43-27d6ae2d521a.jpg",
   ];
   return (
-    <div>
+    <div className="slider-for-home">
       <Slider {...settings}>
         {images.map((image, index) => (
           <div className="cont" key={index}>

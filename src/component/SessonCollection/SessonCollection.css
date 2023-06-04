@@ -51,3 +51,61 @@
 .session-button:hover .session-button-icon {
   filter: invert(1);
 }
+
+@media only screen and (max-width: 1091px) {
+  .item-session-container {
+    grid-column-gap: 15px;
+  }
+}
+@media only screen and (max-width: 1055px) {
+  .item-session-container {
+    grid-column-gap: 10px;
+  }
+}
+@media only screen and (max-width: 539px) {
+  .item-session-container {
+    grid-column-gap: 7px;
+  }
+}
+@media only screen and (max-width: 528px) {
+  .session-title {
+    font-size: 20px;
+  }
+  .session-button {
+    font-size: 12px;
+    padding: 4px 15px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .session-title {
+    font-size: 20px;
+  }
+  .session-container {
+    padding: 0px;
+  }
+  .session-button {
+    font-size: 12px;
+    padding: 4px 15px;
+  }
+  @media only screen and (max-width: 407px) {
+    .session-title {
+      font-size: 16px;
+    }
+    .session-button {
+      padding: 2px 10px;
+      font-size: 10px;
+    }
+    .session-button-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  @media only screen and (max-width: 330px) {
+    .item-session-container {
+      grid-column-gap: 5px;
+    }
+    .session-title {
+      font-size: 14px;
+    }
+  }
+}

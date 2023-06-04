@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Item, ItemProps } from "../Item/Item";
 import "./SessonCollection.css";
 import Skeleton from "../Skeleton/Skeleton";
+import path from "path";
 export type SessionCollectionProps = {
   category: number;
   items: Array<ItemProps>;

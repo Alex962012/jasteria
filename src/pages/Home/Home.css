@@ -3,8 +3,34 @@
   padding: 50px 0 50px 0;
   width: 80%;
 }
+@media only screen and (max-width: 1207px) {
+  .title-section {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1048px) {
+  .title-section {
+    width: 95%;
+  }
+}
 @media only screen and (max-width: 992px) {
   .title-section {
     width: 90%;
+  }
+}
+@media only screen and (max-width: 882px) {
+  .title-section {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 834px) {
+  .title-section {
+    width: 97%;
+  }
+}
+@media only screen and (max-width: 322px) {
+  .title-section {
+    width: 98%;
+    padding: 20px 0;
   }
 }
