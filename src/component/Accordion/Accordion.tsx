@@ -12,12 +12,14 @@ export const Accordion = ({ title, description }: AccordionProps) => {
 
   return (
     <div className="accordion-container">
-      <button className="accordion" onClick={() => onClickAccordion()}>
+      <div className="accordion" onClick={() => onClickAccordion()}>
         {title}
         <div>{activeAccordion ? "-" : "+"}</div>
-      </button>
-      <div className="panel">
-        {activeAccordion && <p className="p">{description}</p>}
+      </div>
+      <div className={activeAccordion ? "active-p" : "p"}>
+        <div className={activeAccordion ? "active-cont-p" : "cont-p"}>
+          {description}
+        </div>
       </div>
     </div>
   );

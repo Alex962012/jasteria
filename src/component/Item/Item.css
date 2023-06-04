@@ -56,12 +56,12 @@
 }
 @media only screen and (max-width: 1374px) {
   .order-item {
-    max-width: 350rem;
     width: 100%;
+    max-width: 24vw;
   }
   .item-picture {
     width: 100%;
-    max-width: 350rem;
+    max-width: 24vw;
     height: 34vw;
   }
 }
@@ -77,10 +77,12 @@
 
 @media only screen and (max-width: 992px) {
   .order-item {
-    width: 250px;
+    width: 265px;
+    max-width: 265px;
   }
   .item-picture {
-    width: 250px;
+    width: 265px;
+    max-width: 265px;
     height: 320px;
   }
 }
@@ -163,7 +165,7 @@
 }
 @media only screen and (max-width: 479px) {
   .order-item {
-    max-width: 220px;
+    max-width: 200px;
     width: 100%;
   }
   .item-picture {
@@ -172,15 +174,17 @@
   }
 }
 @media only screen and (max-width: 443px) {
-  .item-picture {
-    max-width: 190px;
-    height: 265px;
+  .order-item {
+    max-width: 200px;
   }
 }
 @media only screen and (max-width: 423px) {
+  .order-item {
+    max-width: 180px;
+  }
   .item-picture {
     max-width: 180px;
-    height: 260px;
+    height: 250px;
   }
 }
 @media only screen and (max-width: 400px) {

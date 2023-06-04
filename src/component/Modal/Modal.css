@@ -444,6 +444,13 @@
   .modal-title {
     font-size: 1.1em;
   }
+  .window {
+    width: 320px;
+    max-width: 320px;
+  }
+  .slider-img {
+    width: 320px;
+  }
   .modal-price {
     padding: 5px 0px;
   }
@@ -456,7 +463,7 @@
     width: 315px;
   }
   .slider-img {
-    max-width: 315px;
+    /* max-width: 315px; */
     /* background-position: top; */
     height: 400px;
     background-size: cover;

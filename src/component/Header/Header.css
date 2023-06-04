@@ -58,9 +58,18 @@ li {
     height: 50px;
   }
 }
+@media only screen and (max-width: 891px) {
+  nav {
+    width: 75%;
+  }
+}
 @media only screen and (max-width: 768px) {
   nav {
-    width: 50%;
+    width: 60%;
+    margin: 0;
+  }
+  .header-wrapper {
+    width: 95%;
   }
   .nav-item {
     font-size: 12px;
@@ -72,6 +81,14 @@ li {
     margin-top: 5px;
     width: 120px;
     height: 50px;
+  }
+}
+@media only screen and (max-width: 668px) {
+  nav {
+    width: 78%;
+  }
+  .header-wrapper {
+    width: 98%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -119,7 +136,7 @@ li {
     width: 100%;
     height: 100%;
     padding: 15px;
-    background: #ffefba;
+    background: var(--header-color);
     transform: translateX(-100%);
     transition: transform 0.5s;
     flex-direction: column;
