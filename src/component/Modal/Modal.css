@@ -286,13 +286,13 @@
 }
 @media only screen and (max-width: 568px) {
   .modal {
-    align-items: flex-start;
-    top: -10%;
+    padding: 0px;
+    top: 0;
   }
   .modal-container {
     flex-direction: column;
     width: 70%;
-    height: 90%;
+    padding: 20px 0;
   }
   .slider-container {
     width: 400px;
@@ -302,7 +302,8 @@
     z-index: 3;
     width: 40px;
     position: absolute;
-    top: 18%;
+    /* top: 18%; */
+    margin-top: -50vh;
     left: 75%;
   }
   .window {
@@ -337,7 +338,7 @@
   .slider-img {
     border-radius: 12px 12px 0 0;
     height: 300px;
-    max-width: 400px;
+    max-width: 68%;
   }
   .modal-container {
     width: 400px;
@@ -353,13 +354,13 @@
 
   .modal-content-container {
     max-width: 400px;
-    height: 300px;
   }
   .close-modal {
-    padding: 0;
-    /* width: 25px; */
-    top: -275px;
     z-index: 3;
+  }
+  .close-modal-container {
+    margin-top: -45vh;
+    left: 78%;
   }
   .button {
     display: flex;
@@ -385,13 +386,14 @@
   }
   .modal-container {
     width: 380px;
+    overflow-x: hidden;
   }
   .right-button {
     margin-left: 75vw;
   }
   .window {
     width: 380px;
-    max-width: 380px;
+    max-width: 360px;
   }
   .slider-container {
     width: 380px;
@@ -404,6 +406,8 @@
   }
   .right-button {
     margin-left: 77vw;
+    width: 40px;
+    height: 40px;
   }
   .slider-img {
     width: 380px;
@@ -420,14 +424,21 @@
 }
 @media only screen and (max-width: 386px) {
   .modal-container {
+    display: block;
     width: 90%;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+  }
+  .window {
+    width: 100%;
   }
   .slider-container {
-    width: 90%;
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
+    scroll-behavior: smooth;
   }
   .slider-img {
-    width: 92vw;
+    width: 55%;
   }
 }
 @media only screen and (max-width: 368px) {
@@ -441,23 +452,34 @@
   }
 }
 @media only screen and (max-width: 320px) {
+  .button {
+    background-color: white;
+  }
+  .close-modal-container {
+    margin-top: -60vh;
+  }
+  .modal {
+    top: 0;
+    scroll-behavior: smooth;
+  }
   .modal-title {
     font-size: 1.1em;
   }
   .window {
-    width: 320px;
-    max-width: 320px;
+    width: 300px;
+    max-width: 310px;
   }
   .slider-img {
-    width: 320px;
+    width: 300px;
+    max-width: 310px;
   }
   .modal-price {
     padding: 5px 0px;
   }
   .modal-container {
-    width: 315px;
+    width: 300px;
     height: max-content;
-    overflow: auto;
+    padding: 0px;
   }
   .slider-container {
     width: 315px;

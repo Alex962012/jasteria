@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { Item, ItemProps } from "../Item/Item";
 import "./SessonCollection.css";
-import Skeleton from "../Skeleton/Skeleton";
-import path from "path";
+import Skeleton from "react-loading-skeleton";
 export type SessionCollectionProps = {
   category: number;
   items: Array<ItemProps>;
@@ -31,9 +30,11 @@ export const SessionCollection = ({ category, items, isLoading }: any) => {
       </div>
       <div className="item-session-container">
         {isLoading
-          ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+          ? [...new Array(3)].map((_, index) => (
+              <Skeleton key={index} className="skelet" count={1} />
+            ))
           : items.map((item: ItemProps, index: number) =>
-              index > 2 ? "" : <Item {...item} key={index} />
+              index > 2 ? "" : <Item key={index} {...item} />
             )}
       </div>
     </div>

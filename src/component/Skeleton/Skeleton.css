@@ -1,0 +1,14 @@
+.rect-1 {
+  width: 350px;
+  height: 380px;
+}
+@media only screen and (max-width: 405px) {
+  .rect-1 {
+    width: 180px;
+    height: 250px;
+  }
+  .rect-2 {
+    width: 350px;
+    height: 40px;
+  }
+}
