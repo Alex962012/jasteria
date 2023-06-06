@@ -8,10 +8,12 @@
 
 .wrapper {
   max-width: 1400px;
+  /* width: 98%; */
   margin: 0 auto;
-  border: 2px solid var(--price-color);
-  border-radius: 20px;
+  /* border: 2px solid var(--price-color); */
+  /* border-radius: 20px; */
 }
+
 a {
   text-decoration: none;
 }
@@ -19,12 +21,15 @@ a {
 .title-section--title {
   color: var(--main-bg-color);
 }
+
 .subtitle-sub {
   color: var(--main-br-color);
 }
+
 .title-section--subtitle {
   grid-area: subtitle;
 }
+
 @media only screen and (max-width: 1200px) {
   .wrapper {
     max-width: 1200px;
@@ -36,20 +41,24 @@ a {
     max-width: 992px;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .wrapper {
     max-width: 768px;
   }
 }
+
 @media only screen and (max-width: 480px) {
   .wrapper {
     max-width: 480px;
   }
 }
+
 @media only screen and (max-width: 320px) {
   .wrapper {
     max-width: 320px;
   }
+
   h1 {
     font-size: 1em;
   }

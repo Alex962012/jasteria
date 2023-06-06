@@ -36,7 +36,9 @@ export const Item = ({
         onClick={() => onClickModal()}
       ></img>
       <div className="item-title-container">
-        <div className="item-name">{title}</div>
+        <div className="item-name" onClick={() => onClickModal()}>
+          {title}
+        </div>
         <div
           className={like ? "item-like-active" : "item-like"}
           onClick={() => onClickLike()}

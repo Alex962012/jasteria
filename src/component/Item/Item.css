@@ -2,12 +2,18 @@
   margin: 20px 0;
   width: 350px;
 }
+
 .item-title-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 1px 1px 1px;
 }
+
+.item-title-container:hover {
+  cursor: pointer;
+}
+
 .item-picture {
   width: 350px;
   height: 380px;
@@ -15,9 +21,11 @@
   margin-bottom: 10px;
   cursor: pointer;
 }
+
 .item-picture:hover {
   transform: scale(1.01);
 }
+
 .item-name {
   color: var(--price-color);
   font-size: 26px;
@@ -25,6 +33,7 @@
   width: 70%;
   font-family: "Cormorant Garamond", serif;
 }
+
 .item-price {
   color: var(--price-color);
   font-size: 20px;
@@ -32,6 +41,7 @@
   padding: 0 0 0 1px;
   font-family: "Cormorant Garamond", serif;
 }
+
 .item-like {
   background-image: url("https://cdn4.iconfinder.com/data/icons/basic-ui-2-line/32/heart-love-like-likes-loved-favorite-512.png");
   width: 40px;
@@ -40,12 +50,15 @@
   background-size: contain;
   cursor: pointer;
 }
+
 .item-like:hover {
   opacity: 0.8;
 }
+
 .item-like-active:hover {
   opacity: 0.8;
 }
+
 .item-like-active {
   background-image: url("https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-512.png");
   width: 40px;
@@ -54,21 +67,25 @@
   background-size: contain;
   cursor: pointer;
 }
+
 @media only screen and (max-width: 1374px) {
   .order-item {
     width: 100%;
     max-width: 24vw;
   }
+
   .item-picture {
     width: 100%;
     max-width: 24vw;
     height: 34vw;
   }
 }
+
 @media only screen and (max-width: 1200px) {
   .order-item {
     width: 300px;
   }
+
   .item-picture {
     width: 300px;
     height: 360px;
@@ -80,60 +97,74 @@
     width: 265px;
     max-width: 265px;
   }
+
   .item-picture {
     width: 265px;
     max-width: 265px;
     height: 320px;
   }
 }
+
 @media only screen and (max-width: 815px) {
   .order-item {
     width: 230px;
   }
+
   .item-picture {
     width: 230px;
     height: 280px;
   }
+
   .item-name {
     font-size: 20px;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .order-item {
     width: 200px;
   }
+
   .item-picture {
     width: 200px;
     height: 260px;
   }
+
   .item-name {
     font-size: 20px;
   }
 }
+
 @media only screen and (max-width: 662px) {
   .order-item {
     width: 180px;
   }
+
   .item-picture {
     width: 180px;
     height: 240px;
   }
+
   .item-name {
     font-size: 18px;
   }
+
   .item-like {
     width: 30px;
     height: 30px;
   }
+
   .item-like-active {
     width: 30px;
     height: 30px;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .order-item {
     width: 160px;
   }
+
   .item-picture {
     width: 160px;
     height: 240px;
@@ -144,72 +175,88 @@
   .order-item {
     max-width: 145px;
   }
+
   .item-picture {
     max-width: 145px;
     height: 220px;
   }
 }
+
 @media only screen and (max-width: 480px) {
   .order-item {
     width: 220px;
     max-width: 220px;
   }
+
   .item-picture {
     max-width: 220px;
     width: 220px;
     height: 280px;
   }
+
   .order-item:nth-child(3) {
     display: none;
   }
 }
+
 @media only screen and (max-width: 479px) {
   .order-item {
     max-width: 200px;
     width: 100%;
   }
+
   .item-picture {
     max-width: 200px;
     height: 280px;
   }
 }
+
 @media only screen and (max-width: 443px) {
   .order-item {
     max-width: 200px;
   }
 }
+
 @media only screen and (max-width: 423px) {
   .order-item {
     max-width: 180px;
   }
+
   .item-picture {
     max-width: 180px;
     height: 250px;
   }
 }
+
 @media only screen and (max-width: 400px) {
   .item-picture {
     max-width: 170px;
     height: 240px;
   }
 }
+
 @media only screen and (max-width: 380px) {
   .order-item:nth-child(3) {
     display: block;
   }
+
   .order-item {
     width: 95px;
   }
+
   .item-picture {
     width: 95px;
     height: 140px;
   }
+
   .item-name {
     font-size: 12px;
   }
+
   .item-price {
     font-size: 12px;
   }
+
   .item-like {
     width: 25px;
     height: 25px;

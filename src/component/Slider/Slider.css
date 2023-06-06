@@ -8,6 +8,7 @@
   /* grid-row-gap: 0px;
   width: 600px; */
 }
+
 .window {
   max-height: 600px;
   max-width: 100%;
@@ -16,6 +17,7 @@
   position: relative;
   z-index: 2;
 }
+
 .all-pages-container {
   height: 100%;
   display: flex;
@@ -24,6 +26,7 @@
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
+
 .slider-button-svg {
   width: 25px;
   height: 25px;
@@ -35,27 +38,33 @@
   z-index: 3;
   transform: rotate(180deg);
 }
+
 .right-button {
   /* left: 550px; */
   margin-left: 400px;
   top: 50%;
   z-index: 3;
 }
+
 .button:hover {
   opacity: 0.7;
 }
+
 .hidden {
   visibility: hidden;
 }
+
 @media only screen and (max-width: 992px) {
   .window {
     max-width: 350px;
     height: 460px;
   }
+
   .right-button {
     margin-left: 300px;
   }
 }
+
 @media only screen and (max-width: 320px) {
   .right-button {
     margin-left: 265px;
