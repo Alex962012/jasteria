@@ -1,5 +1,5 @@
 import { Slider } from "../Slider/Slider";
-import "./Modal.css";
+import "./Modals.css";
 type ModalProps = {
   active: boolean;
   setActive: (value: boolean) => void;

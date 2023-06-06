@@ -1,4 +1,5 @@
 import { Accordion } from "../../component/Accordion/Accordion";
+import "./Faq.css";
 const helpful = [
   {
     id: 0,
@@ -47,7 +48,9 @@ const helpful = [
 export const Faq = () => {
   return (
     <div className="helpful-container">
-      <h1>Здесь вы можете найти ответы на часто задаваемые вопросы</h1>
+      <h1 className="helpful-h1">
+        Здесь вы можете найти ответы на часто задаваемые вопросы
+      </h1>
       <h3 className="helpful-title">Полезная информация</h3>
       <div className="helpful-info-container">
         {helpful.map((info) => (

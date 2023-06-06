@@ -86,6 +86,7 @@
   text-align: justify;
   color: var(--price-color);
 }
+
 .modal-button-order {
   margin: 0 auto;
   margin-top: 50px;
@@ -106,6 +107,7 @@
   color: black;
   background-color: white;
 }
+
 .close-modal-icon {
   width: 24px;
   height: 24px;
@@ -115,11 +117,13 @@
   display: flex;
   flex-direction: column;
 }
+
 .close-modal-container {
   width: 95%;
   display: flex;
   justify-content: end;
 }
+
 .close-modal {
   display: flex;
   padding-top: 25px;
@@ -135,24 +139,29 @@
   cursor: pointer;
   opacity: 0.7;
 }
+
 @media only screen and (max-width: 1406px) {
   .modal-container {
     width: 77%;
   }
 }
+
 @media only screen and (max-width: 1276px) {
   .modal-description-container {
     padding: 10px;
   }
 }
+
 @media only screen and (max-width: 1200px) {
   .modal-container {
     width: 80%;
   }
+
   .modal-description-container {
     padding: 10px 30px;
   }
 }
+
 @media only screen and (max-width: 1159px) {
   .modal-button-order {
     margin-top: 25px;
@@ -175,16 +184,20 @@
   .modal-container {
     width: 80%;
   }
+
   .modal-description-container {
     padding: 8px;
   }
+
   .close-modal {
     left: 86%;
     padding-top: 5px;
   }
+
   .modal-description {
     font-size: 1em;
   }
+
   .slider-img {
     max-width: 350px;
     height: 466px;
@@ -195,6 +208,7 @@
   .modal-price {
     padding: 10px 0;
   }
+
   .modal-container {
     width: 85%;
   }
@@ -212,16 +226,20 @@
   .close-modal {
     padding-top: 10px;
   }
+
   .modal-title {
     font-size: 1.2em;
   }
+
   .modal-price {
     padding: 10px 0;
     font-size: 1.2em;
   }
+
   .modal-description {
     font-size: 0.9em;
   }
+
   .modal-button-order {
     margin-top: 10px;
   }
@@ -237,108 +255,133 @@
   .window {
     height: 400px;
   }
+
   .slider-container {
     max-width: 300px;
   }
+
   .slider-img {
     height: 400px;
     max-width: 300px;
   }
+
   .right-button {
     margin-left: 260px;
   }
+
   .slider-container:hover .button {
     width: 40px;
     height: 40px;
   }
 }
+
 @media only screen and (max-width: 636px) {
   .modal-button-order {
     margin-top: 5px;
   }
+
   .close-modal {
     padding: 0px;
   }
+
   .modal-description-container {
     padding: 0 8px;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .modal-button-order {
     width: 140px;
     height: 30px;
   }
+
   .close-modal-container {
     margin-top: 5px;
   }
+
   .close-modal {
     width: 25px;
     height: 25px;
   }
+
   .close-modal-icon {
     width: 18px;
     height: 18px;
   }
+
   .modal-price {
     padding: 5px 0;
   }
 }
+
 @media only screen and (max-width: 568px) {
   .modal {
     padding: 0px;
     top: 0;
   }
+
   .modal-container {
     flex-direction: column;
     width: 70%;
     padding: 20px 0;
   }
+
   .slider-container {
     width: 400px;
     max-width: 400px;
   }
+
   .close-modal-container {
     z-index: 3;
     width: 40px;
     position: absolute;
     /* top: 18%; */
-    margin-top: -50vh;
+    margin-top: -70%;
     left: 75%;
   }
+
   .window {
     height: 340px;
   }
+
   .slider-img {
     max-width: 400px;
     height: 340px;
   }
+
   .right-button {
     margin-left: 62vw;
   }
 }
+
 @media only screen and (max-width: 538px) {
   .slider-img {
     max-width: 69vw;
   }
 }
+
 @media only screen and (max-width: 493px) {
   .slider-img {
     max-width: 70vw;
   }
 }
+
 @media only screen and (max-width: 480px) {
   .modal {
     align-items: center;
     z-index: 2;
   }
+
   .slider-container {
     width: 400px;
   }
+
   .slider-img {
     border-radius: 12px 12px 0 0;
     height: 300px;
     max-width: 68%;
   }
+
   .modal-container {
     width: 400px;
     margin-top: 5px;
@@ -346,6 +389,7 @@
     overflow-y: scroll;
     margin-bottom: 5px;
   }
+
   .window {
     height: 300px;
     max-width: 400px;
@@ -354,13 +398,16 @@
   .modal-content-container {
     max-width: 400px;
   }
+
   .close-modal {
     z-index: 3;
   }
+
   .close-modal-container {
-    margin-top: -45vh;
+    margin-top: -60%;
     left: 78%;
   }
+
   .button {
     display: flex;
     position: absolute;
@@ -371,56 +418,70 @@
     border-radius: 100%;
     background-color: white;
   }
+
   .right-button {
     margin-left: 72vw;
     top: 40%;
   }
+
   .left-button {
     top: 40%;
   }
 }
+
 @media only screen and (max-width: 442px) {
   .close-modal-container {
     left: 82%;
+    margin-top: -70%;
   }
+
   .modal-container {
     width: 380px;
     overflow-x: hidden;
   }
+
   .right-button {
     margin-left: 75vw;
   }
+
   .window {
     width: 380px;
     max-width: 360px;
   }
+
   .slider-container {
     width: 380px;
     max-width: 380px;
   }
 }
+
 @media only screen and (max-width: 427px) {
   .close-modal-container {
     left: 84%;
   }
+
   .right-button {
-    margin-left: 77vw;
+    margin-left: 76vw;
     width: 40px;
     height: 40px;
   }
+
   .slider-img {
     width: 380px;
   }
 }
+
 @media only screen and (max-width: 405px) {
   .right-button {
     margin: 0;
     left: 84%;
   }
+
   .button {
     background-color: transparent;
   }
 }
+
 @media only screen and (max-width: 386px) {
   .modal-container {
     display: block;
@@ -428,82 +489,116 @@
     scroll-behavior: smooth;
     overflow-x: scroll;
   }
+
   .window {
     width: 100%;
   }
+
   .slider-container {
     width: 100%;
     max-width: 100%;
     scroll-behavior: smooth;
   }
+
   .slider-img {
     width: 55%;
   }
+
+  .close-modal-container {
+    left: 80%;
+    margin-top: -77%;
+  }
 }
+
 @media only screen and (max-width: 368px) {
   .modal-container {
     width: 95%;
   }
+
+  .close-modal-container {
+    left: 85%;
+    margin-top: -80%;
+  }
 }
+
 @media only screen and (max-width: 348px) {
   .modal-title {
     text-align: center;
   }
+
+  .close-modal-container {
+    left: 85%;
+    margin-top: -85%;
+  }
 }
+
 @media only screen and (max-width: 320px) {
   .button {
     background-color: white;
   }
+
   .close-modal-container {
-    margin-top: -60vh;
+    margin-top: -120%;
+    left: 80%;
   }
+
   .modal {
     top: 0;
     scroll-behavior: smooth;
   }
+
   .modal-title {
     font-size: 1.1em;
   }
+
   .window {
     width: 300px;
     max-width: 310px;
   }
+
   .slider-img {
     width: 300px;
     max-width: 310px;
   }
+
   .modal-price {
     padding: 5px 0px;
   }
+
   .modal-container {
     width: 300px;
     height: max-content;
     padding: 0px;
   }
+
   .slider-container {
     width: 315px;
   }
+
   .slider-img {
-    /* max-width: 315px; */
-    /* background-position: top; */
     height: 400px;
     background-size: cover;
-    /* background-position: center; */
+
   }
+
   .window {
     height: 400px;
   }
+
   .modal-button-order {
     width: 150px;
     height: 30px;
     font-size: 12px;
   }
+
   .modal-description {
     font-size: 0.85em;
   }
+
   .modal-description-container {
     padding: 0px 4px 8px 4px;
   }
+
   .close-modal {
     top: -390px;
   }

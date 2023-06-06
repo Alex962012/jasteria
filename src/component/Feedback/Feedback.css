@@ -51,3 +51,34 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+@media only screen and (max-width: 992px) {
+  .feedback-form-button {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 829px) {
+  .image-container {
+    display: none;
+  }
+  .feedback-form-container {
+    padding: 20px 0;
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 571px) {
+  .feedback-form-container {
+    width: 70%;
+  }
+  .feedback-form-title {
+    text-align: center;
+  }
+  .feedback-form-button {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 452px) {
+  .feedback-form-container {
+    width: 90%;
+  }
+}
