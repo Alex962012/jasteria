@@ -1,14 +1,15 @@
 import Skeleton from "react-loading-skeleton";
 import { Item, ItemProps } from "../../component/Item/Item";
-import { SessionCollectionProps } from "../../component/SessonCollection/SessonCollection";
-import { ItemsProps } from "../Home/Home";
 import "./Catalog.css";
-import { useState } from "react";
-const categories = ["ангора", "полушерсть"];
-export const Catalog = ({ items, isLoading }: ItemsProps) => {
-  const [activeCategory, setActiveCategory] = useState(0);
-  let res: ItemProps[] = [];
-  items.map((el: SessionCollectionProps) => res.push(...el.items));
+
+const categories = ["Все", "ангора", "полушерсть", "меринос"];
+export const Catalog = ({
+  items,
+  isLoading,
+  activeCategory,
+  onClickCategory,
+}: any) => {
+  console.log(isLoading);
   return (
     <div className="order-section">
       <div className="order-section--title">
@@ -19,12 +20,13 @@ export const Catalog = ({ items, isLoading }: ItemsProps) => {
           {categories.map((category, i) => {
             return (
               <li
+                key={i}
+                onClick={() => onClickCategory(i)}
                 className={
                   activeCategory === i
                     ? "category-item-active category-item"
                     : "category-item"
                 }
-                onClick={() => setActiveCategory(i)}
               >
                 {category}
               </li>
@@ -33,9 +35,9 @@ export const Catalog = ({ items, isLoading }: ItemsProps) => {
         </ul>
         {isLoading
           ? [...new Array(6)].map((_, index) => (
-              <Skeleton key={index} count={6} />
+              <Skeleton key={index} className="skelet" count={1} />
             ))
-          : res.map((item: ItemProps, index: number) => (
+          : items.map((item: ItemProps, index: number) => (
               <Item {...item} key={index} />
             ))}
       </div>

@@ -9,7 +9,7 @@ export type ItemProps = {
   category: number;
   images: Array<string>;
   description: string;
-  typeOfYarn: string;
+  type: 0;
 };
 export const Item = ({
   imageUrl,

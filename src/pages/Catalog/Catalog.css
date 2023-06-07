@@ -7,21 +7,25 @@
   display: flex;
   padding: 20px 0;
   justify-content: center;
+  text-align: center;
   color: var(--main-br-color);
   font-family: "Cormorant Garamond", serif;
   font-size: 34px;
 }
 
 .content-order {
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+
 }
 
 .category-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -44,6 +48,34 @@
     font-size: 26px;
     padding: 0px;
   }
+
+  .content-order {
+    width: 97%;
+  }
+
+  .category-container {
+    width: 90%;
+
+    padding: 0;
+    margin: 0 auto;
+
+  }
+
+  .category-item {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 383px) {
+  .content-order {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 379px) {
+  .content-order {
+    width: 97%;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -51,4 +83,6 @@
     font-size: 20px;
     padding: 0px;
   }
+
+
 }

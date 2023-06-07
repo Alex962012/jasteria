@@ -3,15 +3,15 @@ import { Item, ItemProps } from "../Item/Item";
 import "./SessonCollection.css";
 import Skeleton from "react-loading-skeleton";
 export type SessionCollectionProps = {
-  category: number;
+  sesson: number;
   items: Array<ItemProps>;
 };
 const categoryGrosery = ["Зимняя коллекция", "Коллекция осень/весна"];
-export const SessionCollection = ({ category, items, isLoading }: any) => {
+export const SessionCollection = ({ items, isLoading, index }: any) => {
   return (
     <div className="session-container">
       <div className="session-title-container">
-        <div className="session-title">{categoryGrosery[category]}</div>
+        <div className="session-title">{categoryGrosery[index]}</div>
 
         <Link to="/catalog">
           <div className="session-button">

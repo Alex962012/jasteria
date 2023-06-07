@@ -261,4 +261,9 @@
     width: 25px;
     height: 25px;
   }
+
+  .item-like-active {
+    width: 25px;
+    height: 25px;
+  }
 }
