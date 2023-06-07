@@ -39,10 +39,6 @@ export const Item = ({
         <div className="item-name" onClick={() => onClickModal()}>
           {title}
         </div>
-        <div
-          className={like ? "item-like-active" : "item-like"}
-          onClick={() => onClickLike()}
-        ></div>
       </div>
       <div className="item-price">{price} руб.</div>
       <Modal
