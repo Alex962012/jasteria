@@ -6,7 +6,7 @@ export const Footer = () => {
         <div className="footer-content">
           <div className="send-me">Напишите мне</div>
           <ul className="social-container">
-            <a href="">
+            <a href="https://t.me/j_asteria">
               <li>
                 <svg
                   className="footer-icon"
