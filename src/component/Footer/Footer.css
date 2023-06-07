@@ -18,13 +18,26 @@ footer {
 .social-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+
 }
 
 .footer-icon {
+  padding: 0px 10px;
+}
+
+.footer-icon-pic {
   width: 24px;
   height: 24px;
 }
 
-.footer-icon:hover {
+.footer-icon-pic:hover {
   opacity: 0.7;
+}
+
+
+@media only screen and (max-width: 480px) {
+  footer {
+    height: 65px;
+  }
 }

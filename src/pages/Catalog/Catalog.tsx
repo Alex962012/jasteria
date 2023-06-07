@@ -9,7 +9,6 @@ export const Catalog = ({
   activeCategory,
   onClickCategory,
 }: any) => {
-  console.log(isLoading);
   return (
     <div className="order-section">
       <div className="order-section--title">

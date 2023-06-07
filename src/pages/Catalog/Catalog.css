@@ -45,8 +45,11 @@
 
 @media only screen and (max-width: 480px) {
   .order-section--title {
-    font-size: 26px;
-    padding: 0px;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 22px;
+    padding: 20px 0;
+    text-align: center;
   }
 
   .content-order {
@@ -66,6 +69,13 @@
   }
 }
 
+@media only screen and (max-width: 397px) {
+
+  .order-section--title {
+    width: 90%;
+  }
+}
+
 @media only screen and (max-width: 383px) {
   .content-order {
     width: 100%;
@@ -76,12 +86,15 @@
   .content-order {
     width: 97%;
   }
+
+  .order-section--title {
+    width: 95%;
+  }
 }
 
 @media only screen and (max-width: 320px) {
   .order-section--title {
     font-size: 20px;
-    padding: 0px;
   }
 
 
