@@ -1,8 +1,6 @@
 footer {
   height: 80px;
   background-color: var(--header-color);
-  /* border: 0 0 2px 2px solid var(--price-color);
-  border-radius: 0 0 20px 20px; */
 }
 
 .footer-content {

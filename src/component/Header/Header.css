@@ -1,8 +1,10 @@
 header {
   background-color: var(--header-color);
   padding: 20px 0px;
-  /* border: 2px 2px 0px 0px solid var(--price-color);
-  border-radius: 20px 20px 0 0; */
+}
+
+.nav-item:nth-child(1) {
+  display: none;
 }
 
 .header-content {
@@ -111,12 +113,23 @@ li {
 }
 
 @media only screen and (max-width: 480px) {
+  header {
+    padding: 5px 0px;
+  }
+
   nav {
     margin: 0;
   }
 
   .nav-item {
     padding: 20px 0;
+    font-size: 20px;
+    margin-left: -30px;
+  }
+
+  .nav-item:nth-child(1) {
+    margin-top: 50px;
+    display: block;
   }
 
   .menu-btn {
@@ -124,7 +137,7 @@ li {
     height: 30px;
     position: relative;
     z-index: 4;
-
+    margin-top: 15px;
     overflow: hidden;
   }
 
@@ -174,6 +187,7 @@ li {
     transition: transform 0.5s;
     flex-direction: column;
     justify-content: start;
+    align-items: center;
   }
 
   .header-nav.active {

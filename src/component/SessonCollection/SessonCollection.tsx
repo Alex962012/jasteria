@@ -3,11 +3,16 @@ import { Item, ItemProps } from "../Item/Item";
 import "./SessonCollection.css";
 import Skeleton from "react-loading-skeleton";
 export type SessionCollectionProps = {
-  sesson: number;
   items: Array<ItemProps>;
+  isLoading: boolean;
+  index: number;
 };
 const categoryGrosery = ["Зимняя коллекция", "Коллекция осень/весна"];
-export const SessionCollection = ({ items, isLoading, index }: any) => {
+export const SessionCollection = ({
+  items,
+  isLoading,
+  index,
+}: SessionCollectionProps) => {
   return (
     <div className="session-container">
       <div className="session-title-container">
@@ -15,7 +20,7 @@ export const SessionCollection = ({ items, isLoading, index }: any) => {
 
         <Link to="/catalog">
           <div className="session-button">
-            SHOW MORE
+            Перейти в каталог
             <svg
               className="session-button-icon"
               viewBox="0 0 32 32"
