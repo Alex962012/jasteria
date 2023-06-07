@@ -6,7 +6,9 @@
   --price-color: #432818;
 }
 
+
 .wrapper {
+
   max-width: 1400px;
   /* width: 98%; */
   margin: 0 auto;
