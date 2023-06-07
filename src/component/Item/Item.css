@@ -28,15 +28,17 @@
 
 .item-name {
   color: var(--price-color);
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 600;
-  width: 70%;
-  font-family: "Cormorant Garamond", serif;
+  width: 100%;
+  font-family: "Cormorant Garamond",
+    serif;
 }
 
 .item-price {
   color: var(--price-color);
-  font-size: 20px;
+  font-size: 26px;
+  text-align: right;
   font-weight: 600;
   padding: 0 0 0 1px;
   font-family: "Cormorant Garamond", serif;

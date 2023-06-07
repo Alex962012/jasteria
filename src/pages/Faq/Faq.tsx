@@ -51,7 +51,7 @@ export const Faq = () => {
       <h1 className="helpful-h1">
         Здесь вы можете найти ответы на часто задаваемые вопросы
       </h1>
-      <h3 className="helpful-title">Полезная информация</h3>
+
       <div className="helpful-info-container">
         {helpful.map((info) => (
           <Accordion {...info} key={info.id} />
