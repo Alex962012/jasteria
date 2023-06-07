@@ -72,18 +72,18 @@
     "category": 1,
     "items": [
       {
-        "id": 5,
-        "imageUrl": "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/101.jpeg?raw=true",
-        "title": "Коточепчик",
-        "price": 2200,
-        "category": 1,
-        "images": [
-          "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/101.jpeg?raw=true",
-          "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/100.jpeg?raw=true",
-          "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/20230205_151950-min.jpg?raw=true",
-          "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/20230205_152004-min.jpg?raw=true"
-        ],
-        "description": "Связан из пушистой шерсти ангоры, отличается оригинальными кошачьими ушками, благодаря которым вы не останетесь без внимания. Подходит на осень/весну. *возможно исполнение без ушек",
+    "id": 5,
+    "imageUrl": "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/101.jpeg?raw=true",
+    "title": "Коточепчик",
+    "price": 2200,
+    "category": 1,
+    "images": [
+      "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/101.jpeg?raw=true",
+      "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/100.jpeg?raw=true",
+      "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/20230205_151950-min.jpg?raw=true",
+      "https://github.com/Alex962012/jasteria-img/blob/main/%D0%9A%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BF%D1%87%D0%B8%D0%BA/20230205_152004-min.jpg?raw=true"
+    ],
+    "description": "Связан из пушистой шерсти ангоры, отличается оригинальными кошачьими ушками, благодаря которым вы не останетесь без внимания. Подходит на осень/весну. *возможно исполнение без ушек",
         "typeOfYarn": "Ангора"
       },
       {
