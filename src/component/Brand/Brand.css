@@ -1,0 +1,19 @@
+.brand-title {
+    text-align: center;
+    color: var(--price-color);
+    font-family: "Cormorant Garamond", serif;
+}
+
+.brand-subtitle {
+    text-align: center;
+    color: var(--price-color);
+    font-family: "Cormorant Garamond", serif;
+}
+
+.brand-content {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: justify;
+    color: rgb(66, 37, 15);
+    font-family: "Cormorant Garamond", sans-serif;
+}
