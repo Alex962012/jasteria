@@ -8,9 +8,7 @@ export const Categories = ({
   categories,
 }: any) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [selected, setSelected] = useState(0);
   const onClickListItem = (i: number) => {
-    setSelected(i);
     setIsVisible(false);
     onClick(i);
   };
@@ -54,9 +52,9 @@ export const Categories = ({
           </ul>
         </div>
       )}
-      {selected > 0 && (
+      {activeCategory > 0 && (
         <div className="category-item-active category-item">
-          {categories[selected]}
+          {categories[activeCategory]}
           <svg
             onClick={() => onClickListItem(0)}
             className="close-modal-icon"

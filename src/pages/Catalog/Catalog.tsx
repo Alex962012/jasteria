@@ -12,6 +12,8 @@ export const Catalog = ({
   onClickName,
   activeSeason,
   onClickSeason,
+  isVisible,
+  setIsVisible,
 }: any) => {
   return (
     <div className="order-section">

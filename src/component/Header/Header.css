@@ -37,6 +37,7 @@ nav {
 
 .nav-item {
   color: var(--price-color);
+  font-size: 1.6em;
   font-weight: 800;
   font-family: "Cormorant Garamond", serif;
 }
