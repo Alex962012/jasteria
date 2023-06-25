@@ -19,16 +19,16 @@ function App() {
   const [activeYarn, setActiveYarn] = useState(0);
   const typeYarn = activeYarn > 0 ? `typeYarn=${activeYarn}` : "";
 
-  const [activeProduct, setActiveProduct] = useState(0);
-  const typeProduct = activeProduct > 0 ? `typeProduct=${activeProduct}` : "";
-  console.log(`product:${typeProduct}`);
+  const [activeName, setActiveName] = useState(0);
+  const typeName = activeName > 0 ? `typeName=${activeName}` : "";
+  console.log(`product:${typeName}`);
 
   console.log(`yarn:${typeYarn}`);
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `https://jasteria-server-production.up.railway.app/products?${typeProduct}${
-        typeProduct ? "&" : ""
+      `https://jasteria-server-production.up.railway.app/products?${typeName}${
+        typeName ? "&" : ""
       }${typeYarn}`
       // `https://6452097cbce0b0a0f73ae70e.mockapi.io/items?${typeProduct}`
     )
@@ -38,7 +38,7 @@ function App() {
         setIsLoading(false);
         window.scrollTo(0, 0);
       });
-  }, [typeYarn, typeProduct]);
+  }, [typeYarn, typeName]);
   useEffect(() => {
     setIsLoading(true);
     fetch(`https://jasteria-server-production.up.railway.app/products`)
@@ -68,8 +68,8 @@ function App() {
                   isLoading={isLoading}
                   activeYarn={activeYarn}
                   onClickYarn={(i: number) => setActiveYarn(i)}
-                  activeProduct={activeProduct}
-                  onClickProduct={(i: number) => setActiveProduct(i)}
+                  activeName={activeName}
+                  onClickName={(i: number) => setActiveName(i)}
                 />
               }
             />

@@ -8,8 +8,8 @@ export const Catalog = ({
   isLoading,
   activeYarn,
   onClickYarn,
-  activeProduct,
-  onClickProduct,
+  activeName,
+  onClickName,
 }: any) => {
   return (
     <div className="order-section">
@@ -19,8 +19,8 @@ export const Catalog = ({
       <CategoriesList
         activeYarn={activeYarn}
         onClickYarn={onClickYarn}
-        activeProduct={activeProduct}
-        onClickProduct={onClickProduct}
+        activeName={activeName}
+        onClickName={onClickName}
       ></CategoriesList>
       <div className="content-order">
         {isLoading

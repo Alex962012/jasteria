@@ -3,8 +3,8 @@ import { Categories } from "../Categories/Categories";
 export const CategoriesList = ({
   activeYarn,
   onClickYarn,
-  activeProduct,
-  onClickProduct,
+  activeName,
+  onClickName,
 }: any) => {
   const categoriesArray = [
     {
@@ -18,8 +18,8 @@ export const CategoriesList = ({
       id: 1,
       title: "Вид изделия",
       categories: ["Все", "Шапки", "Варежки", "Коточепчик", "Манишка", "Капор"],
-      activeCategory: activeProduct,
-      onClick: onClickProduct,
+      activeCategory: activeName,
+      onClick: onClickName,
     },
   ];
   return (
