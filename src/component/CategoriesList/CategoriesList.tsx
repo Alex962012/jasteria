@@ -5,6 +5,8 @@ export const CategoriesList = ({
   onClickYarn,
   activeName,
   onClickName,
+  activeSeason,
+  onClickSeason,
 }: any) => {
   const categoriesArray = [
     {
@@ -20,6 +22,13 @@ export const CategoriesList = ({
       categories: ["Все", "Шапки", "Варежки", "Коточепчик", "Манишка", "Капор"],
       activeCategory: activeName,
       onClick: onClickName,
+    },
+    {
+      id: 2,
+      title: "Сезон",
+      categories: ["Все", "Зима", "Осень/Весна"],
+      activeCategory: activeSeason,
+      onClick: onClickSeason,
     },
   ];
   return (

@@ -12,25 +12,22 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
   const [itemsHome, setItemsHome] = useState([]);
-
   const [itemsCategory, setItemsCategory] = useState([]);
   const [activeYarn, setActiveYarn] = useState(0);
   const typeYarn = activeYarn > 0 ? `typeYarn=${activeYarn}` : "";
 
   const [activeName, setActiveName] = useState(0);
   const typeName = activeName > 0 ? `typeName=${activeName}` : "";
-  console.log(`product:${typeName}`);
 
-  console.log(`yarn:${typeYarn}`);
+  const [activeSeason, setActiveSeason] = useState(0);
+  const typeSeason = activeSeason > 0 ? `season=${activeSeason}` : "";
   useEffect(() => {
     setIsLoading(true);
     fetch(
       `https://jasteria-server-production.up.railway.app/products?${typeName}${
         typeName ? "&" : ""
-      }${typeYarn}`
-      // `https://6452097cbce0b0a0f73ae70e.mockapi.io/items?${typeProduct}`
+      }${typeYarn}${typeName ? "&" : ""}${typeSeason}`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -38,7 +35,7 @@ function App() {
         setIsLoading(false);
         window.scrollTo(0, 0);
       });
-  }, [typeYarn, typeName]);
+  }, [typeYarn, typeName, typeSeason]);
   useEffect(() => {
     setIsLoading(true);
     fetch(`https://jasteria-server-production.up.railway.app/products`)
@@ -70,6 +67,8 @@ function App() {
                   onClickYarn={(i: number) => setActiveYarn(i)}
                   activeName={activeName}
                   onClickName={(i: number) => setActiveName(i)}
+                  activeSeason={activeSeason}
+                  onClickSeason={(i: number) => setActiveSeason(i)}
                 />
               }
             />

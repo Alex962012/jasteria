@@ -10,6 +10,8 @@ export const Catalog = ({
   onClickYarn,
   activeName,
   onClickName,
+  activeSeason,
+  onClickSeason,
 }: any) => {
   return (
     <div className="order-section">
@@ -21,6 +23,8 @@ export const Catalog = ({
         onClickYarn={onClickYarn}
         activeName={activeName}
         onClickName={onClickName}
+        activeSeason={activeSeason}
+        onClickSeason={onClickSeason}
       ></CategoriesList>
       <div className="content-order">
         {isLoading
