@@ -9,8 +9,8 @@ export type ItemsProps = {
 };
 export const Home = ({ items, isLoading }: ItemsProps) => {
   const itemsObj = [[], []];
-  const winter = (value: ItemProps) => value.season === 0;
-  const spring = (value: ItemProps) => value.season === 1;
+  const winter = (value: ItemProps) => value.season === 1;
+  const spring = (value: ItemProps) => value.season === 2;
   itemsObj[0] = items.filter(winter);
   itemsObj[1] = items.filter(spring);
 

@@ -27,7 +27,7 @@ function App() {
     fetch(
       `https://jasteria-server-production.up.railway.app/products?${typeName}${
         typeName ? "&" : ""
-      }${typeYarn}${typeName ? "&" : ""}${typeSeason}`
+      }${typeYarn}${typeYarn ? "&" : ""}${typeSeason}`
     )
       .then((res) => res.json())
       .then((res) => {
