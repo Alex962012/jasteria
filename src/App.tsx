@@ -12,24 +12,36 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [activeCategory, setActiveCategory] = useState(0);
+
   const [itemsHome, setItemsHome] = useState([]);
 
   const [itemsCategory, setItemsCategory] = useState([]);
-  const category = activeCategory > 0 ? `type=${activeCategory}` : "";
+  const [activeYarn, setActiveYarn] = useState(0);
+  const typeYarn = activeYarn > 0 ? `typeYarn=${activeYarn}` : "";
+
+  const [activeProduct, setActiveProduct] = useState(0);
+  const typeProduct = activeProduct > 0 ? `typeProduct=${activeProduct}` : "";
+  console.log(`product:${typeProduct}`);
+
+  console.log(`yarn:${typeYarn}`);
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://6452097cbce0b0a0f73ae70e.mockapi.io/items?${category}`)
+    fetch(
+      `https://jasteria-server-production.up.railway.app/products?${typeProduct}${
+        typeProduct ? "&" : ""
+      }${typeYarn}`
+      // `https://6452097cbce0b0a0f73ae70e.mockapi.io/items?${typeProduct}`
+    )
       .then((res) => res.json())
       .then((res) => {
         setItemsCategory(res);
         setIsLoading(false);
         window.scrollTo(0, 0);
       });
-  }, [activeCategory]);
+  }, [typeYarn, typeProduct]);
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://6452097cbce0b0a0f73ae70e.mockapi.io/items/`)
+    fetch(`https://jasteria-server-production.up.railway.app/products`)
       .then((res) => res.json())
       .then((res) => {
         setItemsHome(res);
@@ -54,8 +66,10 @@ function App() {
                 <Catalog
                   items={itemsCategory}
                   isLoading={isLoading}
-                  activeCategory={activeCategory}
-                  onClickCategory={(i: number) => setActiveCategory(i)}
+                  activeYarn={activeYarn}
+                  onClickYarn={(i: number) => setActiveYarn(i)}
+                  activeProduct={activeProduct}
+                  onClickProduct={(i: number) => setActiveProduct(i)}
                 />
               }
             />

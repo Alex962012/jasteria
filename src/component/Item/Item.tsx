@@ -6,10 +6,10 @@ export type ItemProps = {
   imageUrl: string;
   title: string;
   price: number;
-  category: number;
+  season: number;
   images: Array<string>;
   description: string;
-  type: 0;
+  typeYarn: 0;
 };
 export const Item = ({
   imageUrl,
