@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Slider } from "../Slider/Slider";
 import "./Modals.css";
 type ModalProps = {
@@ -55,7 +56,10 @@ export const Modal = ({
             <div className="modal-title">{title}</div>
             <div className="modal-price">{price} руб.</div>
             <div className="modal-description">{description}</div>
-            <div className="modal-button-order">Заказать</div>
+
+            <Link className="modal-button-order" to="/feedback">
+              Заказать
+            </Link>
           </div>
         </div>
       </div>

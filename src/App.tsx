@@ -13,29 +13,6 @@ import { useEffect, useState } from "react";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [itemsHome, setItemsHome] = useState([]);
-  const [itemsCategory, setItemsCategory] = useState([]);
-  const [activeYarn, setActiveYarn] = useState(0);
-  const typeYarn = activeYarn > 0 ? `typeYarn=${activeYarn}` : "";
-
-  const [activeName, setActiveName] = useState(0);
-  const typeName = activeName > 0 ? `typeName=${activeName}` : "";
-
-  const [activeSeason, setActiveSeason] = useState(0);
-  const typeSeason = activeSeason > 0 ? `season=${activeSeason}` : "";
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(
-      `https://jasteria-server-production.up.railway.app/products?${typeName}${
-        typeName ? "&" : ""
-      }${typeYarn}${typeYarn ? "&" : ""}${typeSeason}`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        setItemsCategory(res);
-        setIsLoading(false);
-        window.scrollTo(0, 0);
-      });
-  }, [typeYarn, typeName, typeSeason]);
   useEffect(() => {
     setIsLoading(true);
     fetch(`https://jasteria-server-production.up.railway.app/products`)
@@ -60,16 +37,7 @@ function App() {
             <Route
               path="/catalog"
               element={
-                <Catalog
-                  items={itemsCategory}
-                  isLoading={isLoading}
-                  activeYarn={activeYarn}
-                  onClickYarn={(i: number) => setActiveYarn(i)}
-                  activeName={activeName}
-                  onClickName={(i: number) => setActiveName(i)}
-                  activeSeason={activeSeason}
-                  onClickSeason={(i: number) => setActiveSeason(i)}
-                />
+                <Catalog isLoading={isLoading} setIsLoading={setIsLoading} />
               }
             />
             <Route path="/feedback" element={<FeedbackPage />} />
