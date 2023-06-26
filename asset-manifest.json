@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/jasteria/static/css/main.81f65c7a.css",
-    "main.js": "/jasteria/static/js/main.6caf5b53.js",
+    "main.css": "/jasteria/static/css/main.b6c630e8.css",
+    "main.js": "/jasteria/static/js/main.0f6775fe.js",
     "static/media/logo.png": "/jasteria/static/media/logo.0d0f65bffc48fc479c19.png",
     "static/media/slick.svg": "/jasteria/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/jasteria/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/jasteria/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/jasteria/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/jasteria/index.html",
-    "main.81f65c7a.css.map": "/jasteria/static/css/main.81f65c7a.css.map",
-    "main.6caf5b53.js.map": "/jasteria/static/js/main.6caf5b53.js.map"
+    "main.b6c630e8.css.map": "/jasteria/static/css/main.b6c630e8.css.map",
+    "main.0f6775fe.js.map": "/jasteria/static/js/main.0f6775fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.81f65c7a.css",
-    "static/js/main.6caf5b53.js"
+    "static/css/main.b6c630e8.css",
+    "static/js/main.0f6775fe.js"
   ]
 }
