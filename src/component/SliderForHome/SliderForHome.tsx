@@ -10,21 +10,20 @@ export const SliderForHome = () => {
     infinite: true,
     speed: 4000,
     slidesToShow: 1,
-
+    className: "slider variable-width",
     autoplay: true,
     autoplaySpeed: 2000,
-    variableHeight: 600,
   };
   const images = [
-    "https://wallpapers.com/images/featured/en3dnh2zi84sgt3t.jpg",
-    "https://plugins-media.makeupar.com/smb/blog/post/2021-09-03/69e15545-d157-44bd-9b43-27d6ae2d521a.jpg",
+    "https://kartinki.pibig.info/uploads/posts/2023-04/thumbs/1681426174_kartinki-pibig-info-p-kartinki-dlya-slaidera-arti-vkontakte-12.jpg",
+    "https://kartinki.pibig.info/uploads/posts/2023-04/thumbs/1681426184_kartinki-pibig-info-p-kartinki-dlya-slaidera-arti-vkontakte-28.jpg",
   ];
   return (
     <div className="slider-for-home">
       <Slider {...settings}>
         {images.map((image, index) => (
           <div className="cont" key={index}>
-            <img src={image} alt="" style={{ width: 1120 }} />
+            <img src={image} alt="" className="variable-width-img" />
           </div>
         ))}
       </Slider>

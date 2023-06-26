@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Categories } from "../Categories/Categories";
 
 export const CategoriesList = ({
@@ -31,6 +32,7 @@ export const CategoriesList = ({
       onClick: onClickSeason,
     },
   ];
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="categories-list">
       {categoriesArray.map((category: any) => (
@@ -40,6 +42,8 @@ export const CategoriesList = ({
           onClick={category.onClick}
           title={category.title}
           categories={category.categories}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
         />
       ))}
     </div>

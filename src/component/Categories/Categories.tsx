@@ -6,19 +6,33 @@ export const Categories = ({
   onClick,
   title,
   categories,
+  isOpen,
+  setIsOpen,
 }: any) => {
   const [isVisible, setIsVisible] = useState(false);
   const onClickListItem = (i: number) => {
     setIsVisible(false);
+    setIsOpen(false);
     onClick(i);
   };
+
+  const onClickItem = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <div className="categories-container">
       <div
-        className="categories_label"
-        onClick={() => setIsVisible(!isVisible)}
+        className={
+          activeCategory > 0
+            ? "categories_label category-item-active category-item"
+            : "categories_label category-item"
+        }
+        onClick={() => onClickItem()}
       >
-        <div className="categories_select">{title}</div>
+        <div className="category-select">
+          {activeCategory > 0 ? categories[activeCategory] : title}
+        </div>
         <svg
           className="categories_label-icon"
           height="512px"
@@ -52,7 +66,7 @@ export const Categories = ({
           </ul>
         </div>
       )}
-      {activeCategory > 0 && (
+      {/* {activeCategory > 0 && (
         <div className="category-item-active category-item">
           {categories[activeCategory]}
           <svg
@@ -69,7 +83,7 @@ export const Categories = ({
             <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
           </svg>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

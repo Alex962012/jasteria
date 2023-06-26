@@ -170,6 +170,8 @@
   .item-session-container {
     overflow: hidden;
     width: 98.3%;
+    grid-column-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .skelet {
@@ -197,9 +199,8 @@
       height: 250px;
     }
 
-    .item-session-container {
-      width: 92%;
-    }
+
+
   }
 
   @media only screen and (max-width: 407px) {
@@ -219,7 +220,8 @@
 
     .item-session-container {
       overflow: hidden;
-      width: 95%;
+      width: 100%;
+      grid-column-gap: 15px;
     }
   }
 
@@ -227,6 +229,7 @@
     .item-session-container {
       overflow: hidden;
       width: 100%;
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .skelet {

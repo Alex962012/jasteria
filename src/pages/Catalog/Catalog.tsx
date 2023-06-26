@@ -12,6 +12,7 @@ export const Catalog = ({ isLoading, setIsLoading }: any) => {
   const typeYarn = activeYarn > 0 ? `typeYarn=${activeYarn}` : "";
   const typeName = activeName > 0 ? `typeName=${activeName}` : "";
   const typeSeason = activeSeason > 0 ? `season=${activeSeason}` : "";
+
   useEffect(() => {
     setIsLoading(true);
     fetch(
