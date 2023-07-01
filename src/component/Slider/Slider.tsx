@@ -17,15 +17,15 @@ export const Slider = ({ children }: any) => {
         });
       })
     );
-  }, []);
+  }, [children]);
   const onClickLeftArrow = () => {
-    setOffset((currentOffset: any) => {
+    setOffset((currentOffset: number) => {
       const newOffset = currentOffset + PAGE_WIDTH;
       return Math.min(newOffset, 0);
     });
   };
   const onClickRightArrow = () => {
-    setOffset((currentOffset: any) => {
+    setOffset((currentOffset: number) => {
       const newOffset = currentOffset - PAGE_WIDTH;
       const maxOffset = -(PAGE_WIDTH * (pages.length - 1));
 

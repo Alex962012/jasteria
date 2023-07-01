@@ -1,13 +1,19 @@
-import { useContext } from "react";
+import { Dispatch, useContext } from "react";
 import "./Categories.css";
 import { MenuContext } from "../CategoriesList/CategoriesList";
 //вид изделия
+interface ICategories {
+  activeCategory: number;
+  onClick: Dispatch<React.SetStateAction<number>>;
+  title: string;
+  categories: Array<string>;
+}
 export const Categories = ({
   activeCategory,
   onClick,
   title,
   categories,
-}: any) => {
+}: ICategories) => {
   const onClickListItem = (i: number) => {
     setActiveGroup(undefined);
     onClick(i);
@@ -42,7 +48,7 @@ export const Categories = ({
       {activeGroup === title && (
         <div className="categories_popup">
           <ul className="category-list">
-            {categories.map((category: any, i: number) => {
+            {categories.map((category: string, i: number) => {
               return (
                 <li
                   key={i}

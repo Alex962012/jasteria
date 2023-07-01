@@ -19,11 +19,11 @@ export const Item = ({
   id,
   description,
 }: ItemProps) => {
-  const [like, setLike] = useState(false);
+  // const [like, setLike] = useState(false);
   const [active, setActive] = useState(false);
-  const onClickLike = () => {
-    setLike(!like);
-  };
+  // const onClickLike = () => {
+  //   setLike(!like);
+  // };
   const onClickModal = () => {
     setActive(true);
   };

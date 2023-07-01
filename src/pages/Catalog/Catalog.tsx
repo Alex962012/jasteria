@@ -2,9 +2,14 @@ import Skeleton from "react-loading-skeleton";
 import { Item, ItemProps } from "../../component/Item/Item";
 import "./Catalog.css";
 import { CategoriesList } from "../../component/CategoriesList/CategoriesList";
-import { useEffect, useState } from "react";
+import { Dispatch, useEffect, useState } from "react";
 
-export const Catalog = ({ isLoading, setIsLoading }: any) => {
+interface ICatalog {
+  isLoading: boolean;
+  setIsLoading: Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
   const [itemsCategory, setItemsCategory] = useState([]);
   const [activeName, setActiveName] = useState(0);
   const [activeYarn, setActiveYarn] = useState(0);

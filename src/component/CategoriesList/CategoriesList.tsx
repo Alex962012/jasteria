@@ -1,8 +1,22 @@
-import { createContext, useState } from "react";
+import { Dispatch, createContext, useState } from "react";
 import { Categories } from "../Categories/Categories";
 
 export const MenuContext = createContext<any>(false);
-
+interface ICategoryList {
+  activeYarn: number;
+  onClickYarn: Dispatch<React.SetStateAction<number>>;
+  activeName: number;
+  onClickName: Dispatch<React.SetStateAction<number>>;
+  activeSeason: number;
+  onClickSeason: Dispatch<React.SetStateAction<number>>;
+}
+interface ICategory {
+  id: number;
+  title: string;
+  categories: Array<string>;
+  activeCategory: number;
+  onClick: Dispatch<React.SetStateAction<number>>;
+}
 export const CategoriesList = ({
   activeYarn,
   onClickYarn,
@@ -10,7 +24,7 @@ export const CategoriesList = ({
   onClickName,
   activeSeason,
   onClickSeason,
-}: any) => {
+}: ICategoryList) => {
   const categoriesArray = [
     {
       id: 0,
@@ -37,7 +51,7 @@ export const CategoriesList = ({
   const [activeGroup, setActiveGroup] = useState();
   return (
     <div className="categories-list">
-      {categoriesArray.map((category: any) => (
+      {categoriesArray.map((category: ICategory) => (
         <MenuContext.Provider
           value={{ activeGroup, setActiveGroup }}
           key={category.id}
