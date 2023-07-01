@@ -27,11 +27,13 @@ export const Catalog = ({ isLoading, setIsLoading }: any) => {
         window.scrollTo(0, 0);
       });
   }, [typeYarn, typeName, typeSeason, setIsLoading]);
+
   return (
     <div className="order-section">
       <div className="order-section--title">
         Вы можете заказать любое изделие из каталога по своим меркам
       </div>
+
       <CategoriesList
         activeYarn={activeYarn}
         onClickYarn={setActiveYarn}
@@ -40,6 +42,7 @@ export const Catalog = ({ isLoading, setIsLoading }: any) => {
         activeSeason={activeSeason}
         onClickSeason={setActiveSeason}
       ></CategoriesList>
+
       <div className="content-order">
         {isLoading
           ? [...new Array(6)].map((_, index) => (

@@ -1,34 +1,28 @@
-import { useState } from "react";
+import { useContext } from "react";
 import "./Categories.css";
+import { MenuContext } from "../CategoriesList/CategoriesList";
 //вид изделия
 export const Categories = ({
   activeCategory,
   onClick,
   title,
   categories,
-  isOpen,
-  setIsOpen,
 }: any) => {
-  const [isVisible, setIsVisible] = useState(false);
   const onClickListItem = (i: number) => {
-    setIsVisible(false);
-    setIsOpen(false);
+    setActiveGroup(undefined);
     onClick(i);
   };
 
-  const onClickItem = () => {
-    setIsVisible(!isVisible);
-  };
-
+  const { activeGroup, setActiveGroup } = useContext(MenuContext);
   return (
-    <div className="categories-container">
+    <div className="categories-container ">
       <div
         className={
           activeCategory > 0
             ? "categories_label category-item-active category-item"
             : "categories_label category-item"
         }
-        onClick={() => onClickItem()}
+        onClick={() => setActiveGroup(title)}
       >
         <div className="category-select">
           {activeCategory > 0 ? categories[activeCategory] : title}
@@ -45,7 +39,7 @@ export const Categories = ({
           <polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 " />
         </svg>
       </div>
-      {isVisible && (
+      {activeGroup === title && (
         <div className="categories_popup">
           <ul className="category-list">
             {categories.map((category: any, i: number) => {

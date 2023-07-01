@@ -6,13 +6,14 @@ import "./SliderForHome.css";
 export const SliderForHome = () => {
   const settings = {
     dots: false,
-
     infinite: true,
-    speed: 4000,
     slidesToShow: 1,
+    slidesToScroll: 1,
     className: "slider variable-width",
     autoplay: true,
+    speed: 2500,
     autoplaySpeed: 2000,
+    cssEase: "linear",
   };
   const images = [
     "https://kartinki.pibig.info/uploads/posts/2023-04/thumbs/1681426174_kartinki-pibig-info-p-kartinki-dlya-slaidera-arti-vkontakte-12.jpg",

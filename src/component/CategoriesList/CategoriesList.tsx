@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { Categories } from "../Categories/Categories";
+
+export const MenuContext = createContext<any>(false);
 
 export const CategoriesList = ({
   activeYarn,
@@ -32,19 +34,21 @@ export const CategoriesList = ({
       onClick: onClickSeason,
     },
   ];
-  const [isOpen, setIsOpen] = useState(false);
+  const [activeGroup, setActiveGroup] = useState();
   return (
     <div className="categories-list">
       {categoriesArray.map((category: any) => (
-        <Categories
+        <MenuContext.Provider
+          value={{ activeGroup, setActiveGroup }}
           key={category.id}
-          activeCategory={category.activeCategory}
-          onClick={category.onClick}
-          title={category.title}
-          categories={category.categories}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-        />
+        >
+          <Categories
+            activeCategory={category.activeCategory}
+            onClick={category.onClick}
+            title={category.title}
+            categories={category.categories}
+          />
+        </MenuContext.Provider>
       ))}
     </div>
   );
