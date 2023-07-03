@@ -1,25 +1,28 @@
-import { Dispatch, useContext } from "react";
+import { Dispatch } from "react";
 import "./Categories.css";
-import { MenuContext } from "../CategoriesList/CategoriesList";
+
 //вид изделия
 interface ICategories {
   activeCategory: number;
   onClick: Dispatch<React.SetStateAction<number>>;
   title: string;
   categories: Array<string>;
+  activeGroup: undefined;
+  switchGroup: any;
 }
 export const Categories = ({
   activeCategory,
   onClick,
   title,
   categories,
+  activeGroup,
+  switchGroup,
 }: ICategories) => {
   const onClickListItem = (i: number) => {
-    setActiveGroup(undefined);
+    switchGroup(undefined);
     onClick(i);
   };
 
-  const { activeGroup, setActiveGroup } = useContext(MenuContext);
   return (
     <div className="categories-container ">
       <div
@@ -28,7 +31,7 @@ export const Categories = ({
             ? "categories_label category-item-active category-item"
             : "categories_label category-item"
         }
-        onClick={() => setActiveGroup(title)}
+        onClick={() => switchGroup(title)}
       >
         <div className="category-select">
           {activeCategory > 0 ? categories[activeCategory] : title}

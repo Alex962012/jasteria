@@ -17,6 +17,7 @@ export const Feedback = () => {
       )
       .then(
         (result) => {
+          alert("Сообщение отправлено");
           console.log(result.text);
         },
         (error) => {

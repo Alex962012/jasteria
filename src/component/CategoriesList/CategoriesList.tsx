@@ -1,4 +1,4 @@
-import { Dispatch, createContext, useState } from "react";
+import { Dispatch, createContext, useCallback, useState } from "react";
 import { Categories } from "../Categories/Categories";
 
 export const MenuContext = createContext<any>(false);
@@ -49,20 +49,23 @@ export const CategoriesList = ({
     },
   ];
   const [activeGroup, setActiveGroup] = useState();
+  const switchGroup = useCallback((title: undefined) => {
+    setActiveGroup((activeTitle) =>
+      activeTitle === title ? undefined : title
+    );
+  }, []);
   return (
     <div className="categories-list">
       {categoriesArray.map((category: ICategory) => (
-        <MenuContext.Provider
-          value={{ activeGroup, setActiveGroup }}
+        <Categories
           key={category.id}
-        >
-          <Categories
-            activeCategory={category.activeCategory}
-            onClick={category.onClick}
-            title={category.title}
-            categories={category.categories}
-          />
-        </MenuContext.Provider>
+          activeCategory={category.activeCategory}
+          onClick={category.onClick}
+          title={category.title}
+          categories={category.categories}
+          activeGroup={activeGroup}
+          switchGroup={switchGroup}
+        />
       ))}
     </div>
   );

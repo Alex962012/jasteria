@@ -19,6 +19,7 @@ export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
   const typeSeason = activeSeason > 0 ? `season=${activeSeason}` : "";
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setIsLoading(true);
     fetch(
       `https://jasteria-server-production.up.railway.app/products?${typeName}${
@@ -29,7 +30,6 @@ export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
       .then((res) => {
         setItemsCategory(res);
         setIsLoading(false);
-        window.scrollTo(0, 0);
       });
   }, [typeYarn, typeName, typeSeason, setIsLoading]);
 
