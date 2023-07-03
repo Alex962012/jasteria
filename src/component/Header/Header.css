@@ -27,6 +27,14 @@ header {
   opacity: 0.7;
 }
 
+.logo {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.logo-container {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 nav {
   padding-top: 30px;
   margin: 0 0 0 -60px;
@@ -40,6 +48,7 @@ nav {
   font-size: 1.6em;
   font-weight: 800;
   font-family: "Cormorant Garamond", serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .nav-item:hover {

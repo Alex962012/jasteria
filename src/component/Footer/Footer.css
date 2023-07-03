@@ -4,6 +4,10 @@ footer {
   background-color: var(--header-color);
 }
 
+.footer-item {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 .footer-content {
   margin: 0 auto;
   width: 80%;

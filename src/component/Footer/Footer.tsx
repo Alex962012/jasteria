@@ -5,7 +5,10 @@ export const Footer = () => {
       <div className="footer-wrapper">
         <div className="footer-content">
           <ul className="social-container">
-            <a href="https://instagram.com/j.asteria13?igshid=MzRlODBiNWFlZA==">
+            <a
+              href="https://instagram.com/j.asteria13?igshid=MzRlODBiNWFlZA=="
+              className="footer-item"
+            >
               <li className="footer-icon">
                 <svg
                   className="footer-icon-pic"
@@ -37,7 +40,7 @@ export const Footer = () => {
                 </svg>
               </li>
             </a>
-            <a href="https://wa.me/79247354213">
+            <a href="https://wa.me/79247354213" className="footer-item">
               <li className="footer-icon">
                 <svg
                   className="footer-icon-pic"
@@ -66,7 +69,7 @@ export const Footer = () => {
                 </svg>
               </li>
             </a>
-            <a href="https://t.me/j_asteria">
+            <a href="https://t.me/j_asteria" className="footer-item">
               <li className="footer-icon">
                 <svg
                   className="footer-icon-pic"

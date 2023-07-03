@@ -1,6 +1,7 @@
 .order-item {
   margin: 20px 0;
   width: 350px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .item-title-container {

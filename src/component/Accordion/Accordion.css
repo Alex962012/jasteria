@@ -51,7 +51,7 @@
 }
 
 .active-cont-p {
-  transition: 1s ease;
+  text-align: justify;
   opacity: 1;
   width: 90%;
   margin: 0 auto;

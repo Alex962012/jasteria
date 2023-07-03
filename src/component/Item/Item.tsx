@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Item.css";
-import { Modal } from "../Modal/Modal";
+import { Modal } from "../ModalWindow/ModalWindow";
 export type ItemProps = {
   id: number;
   imageUrl: string;
@@ -19,11 +19,8 @@ export const Item = ({
   id,
   description,
 }: ItemProps) => {
-  // const [like, setLike] = useState(false);
   const [active, setActive] = useState(false);
-  // const onClickLike = () => {
-  //   setLike(!like);
-  // };
+
   const onClickModal = () => {
     setActive(true);
   };

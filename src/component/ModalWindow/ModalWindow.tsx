@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Slider } from "../Slider/Slider";
-import "./Modals.css";
+import "./ModalWindow.css";
 type ModalProps = {
   active: boolean;
   setActive: (value: boolean) => void;
