@@ -2,13 +2,14 @@ import Skeleton from "react-loading-skeleton";
 import { Item, ItemProps } from "../../component/Item/Item";
 import "./Catalog.css";
 import { CategoriesList } from "../../component/CategoriesList/CategoriesList";
-import { Dispatch, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setActiveName,
   setActiveSeason,
   setActiveYarn,
 } from "../../redux/slices/filterSlice";
+import { RootState } from "../../redux/store";
 
 interface ICatalog {
   isLoading: boolean;
@@ -18,21 +19,22 @@ interface ICatalog {
 export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
   const dispatch = useDispatch();
   const [itemsCategory, setItemsCategory] = useState([]);
-  const activeName = useSelector((state: any) => state.filter.activeName);
-  const activeYarn = useSelector((state: any) => state.filter.activeYarn);
-  const activeSeason = useSelector((state: any) => state.filter.activeSeason);
-  // const [activeSeason, setActiveSeason] = useState(0);
+  const activeName = useSelector((state: RootState) => state.filter.activeName);
+  const activeYarn = useSelector((state: RootState) => state.filter.activeYarn);
+  const activeSeason = useSelector(
+    (state: RootState) => state.filter.activeSeason
+  );
+
   const typeYarn = activeYarn > 0 ? `typeYarn=${activeYarn}` : "";
   const typeName = activeName > 0 ? `typeName=${activeName}` : "";
   const typeSeason = activeSeason > 0 ? `season=${activeSeason}` : "";
-  const onChangeActiveName = (i: any) => {
+  const onChangeActiveName = (i: SetStateAction<number>) => {
     dispatch(setActiveName(i));
-    console.log(i);
   };
-  const onChangeActiveYarn = (i: any) => {
+  const onChangeActiveYarn = (i: SetStateAction<number>) => {
     dispatch(setActiveYarn(i));
   };
-  const onChangeActiveSeason = (i: any) => {
+  const onChangeActiveSeason = (i: SetStateAction<number>) => {
     dispatch(setActiveSeason(i));
   };
   useEffect(() => {
