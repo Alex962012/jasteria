@@ -9,7 +9,9 @@ import { FeedbackPage } from "./pages/Feedback-Page/FeedbackPage";
 import { Faq } from "./pages/Faq/Faq";
 import { AboutBrand } from "./pages/AboutBrand/AboutBrand";
 import { useEffect, useState } from "react";
+import React from "react";
 
+export const ItemsContext = React.createContext([]);
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [itemsHome, setItemsHome] = useState([]);
@@ -26,28 +28,27 @@ function App() {
 
   return (
     <div className="App">
-      <div className="wrapper">
-        <Header />
-        <div className="title-section">
-          <Routes>
-            <Route
-              path="/"
-              element={<Home items={itemsHome} isLoading={isLoading} />}
-            />
-            <Route
-              path="/catalog"
-              element={
-                <Catalog isLoading={isLoading} setIsLoading={setIsLoading} />
-              }
-            />
-            <Route path="/feedback" element={<FeedbackPage />} />
-            <Route path="/faq" element={<Faq />} />
-            <Route path="/about" element={<AboutBrand />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+      <ItemsContext.Provider value={itemsHome}>
+        <div className="wrapper">
+          <Header />
+          <div className="title-section">
+            <Routes>
+              <Route path="/" element={<Home isLoading={isLoading} />} />
+              <Route
+                path="/catalog"
+                element={
+                  <Catalog isLoading={isLoading} setIsLoading={setIsLoading} />
+                }
+              />
+              <Route path="/feedback" element={<FeedbackPage />} />
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/about" element={<AboutBrand />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </ItemsContext.Provider>
     </div>
   );
 }

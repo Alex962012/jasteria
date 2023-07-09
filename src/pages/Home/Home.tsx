@@ -2,12 +2,13 @@ import { SliderForHome } from "../../component/SliderForHome/SliderForHome";
 import "./Home.css";
 import { ItemProps } from "../../component/Item/Item";
 import { SessionCollection } from "../../component/SessonCollection/SessonCollection";
-
+import { ItemsContext } from "../../App";
+import { useContext } from "react";
 export type ItemsProps = {
-  items: any;
   isLoading: boolean;
 };
-export const Home = ({ items, isLoading }: ItemsProps) => {
+export const Home = ({ isLoading }: ItemsProps) => {
+  const items = useContext(ItemsContext);
   const itemsObj = [[], []];
   const winter = (value: ItemProps) => value.season === 1;
   const spring = (value: ItemProps) => value.season === 2;

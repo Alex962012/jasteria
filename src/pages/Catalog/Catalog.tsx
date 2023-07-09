@@ -3,6 +3,12 @@ import { Item, ItemProps } from "../../component/Item/Item";
 import "./Catalog.css";
 import { CategoriesList } from "../../component/CategoriesList/CategoriesList";
 import { Dispatch, useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setActiveName,
+  setActiveSeason,
+  setActiveYarn,
+} from "../../redux/slices/filterSlice";
 
 interface ICatalog {
   isLoading: boolean;
@@ -10,14 +16,25 @@ interface ICatalog {
 }
 
 export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
+  const dispatch = useDispatch();
   const [itemsCategory, setItemsCategory] = useState([]);
-  const [activeName, setActiveName] = useState(0);
-  const [activeYarn, setActiveYarn] = useState(0);
-  const [activeSeason, setActiveSeason] = useState(0);
+  const activeName = useSelector((state: any) => state.filter.activeName);
+  const activeYarn = useSelector((state: any) => state.filter.activeYarn);
+  const activeSeason = useSelector((state: any) => state.filter.activeSeason);
+  // const [activeSeason, setActiveSeason] = useState(0);
   const typeYarn = activeYarn > 0 ? `typeYarn=${activeYarn}` : "";
   const typeName = activeName > 0 ? `typeName=${activeName}` : "";
   const typeSeason = activeSeason > 0 ? `season=${activeSeason}` : "";
-
+  const onChangeActiveName = (i: any) => {
+    dispatch(setActiveName(i));
+    console.log(i);
+  };
+  const onChangeActiveYarn = (i: any) => {
+    dispatch(setActiveYarn(i));
+  };
+  const onChangeActiveSeason = (i: any) => {
+    dispatch(setActiveSeason(i));
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
@@ -41,11 +58,11 @@ export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
 
       <CategoriesList
         activeYarn={activeYarn}
-        onClickYarn={setActiveYarn}
+        onClickYarn={onChangeActiveYarn}
         activeName={activeName}
-        onClickName={setActiveName}
+        onClickName={onChangeActiveName}
         activeSeason={activeSeason}
-        onClickSeason={setActiveSeason}
+        onClickSeason={onChangeActiveSeason}
       ></CategoriesList>
 
       <div className="content-order">
