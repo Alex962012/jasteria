@@ -28,11 +28,16 @@ export const filterSlice = createSlice({
       console.log(action);
       state.activeSeason = action.payload;
     },
+    setFilter(state, action) {
+      state.activeName = Number(action.payload.activeName);
+      state.activeSeason = Number(action.payload.activeSeason);
+      state.activeYarn = Number(action.payload.activeYarn);
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setActiveName, setActiveYarn, setActiveSeason } =
+export const { setActiveName, setActiveYarn, setActiveSeason, setFilter } =
   filterSlice.actions;
 
 export default filterSlice.reducer;

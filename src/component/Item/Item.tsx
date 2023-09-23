@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Item.css";
 import { Modal } from "../ModalWindow/ModalWindow";
 export type ItemProps = {
-  id: number;
+  id: any;
   imageUrl: string;
   title: string;
   price: number;
