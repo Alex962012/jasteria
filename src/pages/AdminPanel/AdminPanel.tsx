@@ -4,9 +4,17 @@ export const AdminPanel = () => {
   return (
     <div>
       <h1>AdminPanel</h1>
-      <button>
-        <Link to={"/item-manager"}>Добавить товар</Link>
-      </button>
+      <div>
+        <button>
+          <Link to={"/item-manager"}>Добавить товар</Link>
+        </button>
+        <button>
+          <Link to={"/item-manager"}>Изменить товар</Link>
+        </button>
+        <button>
+          <Link to={"/item-manager"}>Удалить товар</Link>
+        </button>
+      </div>
     </div>
   );
 };
