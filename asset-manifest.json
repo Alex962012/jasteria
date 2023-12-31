@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/jasteria/static/css/main.ea419bc2.css",
-    "main.js": "/jasteria/static/js/main.5da13ee8.js",
+    "main.css": "/jasteria/static/css/main.ec3d745c.css",
+    "main.js": "/jasteria/static/js/main.83dde8b5.js",
     "static/media/20220610_190753.jpg": "/jasteria/static/media/20220610_190753.02056d53f442a9665433.jpg",
     "static/media/101.jpeg": "/jasteria/static/media/101.605f8820e21c85aa92c3.jpeg",
     "static/media/20231026_120514.jpg": "/jasteria/static/media/20231026_120514.4531467f84bc23467d21.jpg",
     "static/media/20231026_113456.jpg": "/jasteria/static/media/20231026_113456.d98d3270159cfe883b58.jpg",
     "static/media/20231026_114848.jpg": "/jasteria/static/media/20231026_114848.b9d87125f02275e7f45d.jpg",
     "static/media/20231026_115127.jpg": "/jasteria/static/media/20231026_115127.99af610d9addb304159f.jpg",
-    "static/media/20231026_120733.jpg": "/jasteria/static/media/20231026_120733.595c1d3c83edfabf8034.jpg",
+    "static/media/20231026_120733.jpg": "/jasteria/static/media/20231026_120733.ef8a58000dba99e3583d.jpg",
     "static/media/logo.png": "/jasteria/static/media/logo.0d0f65bffc48fc479c19.png",
     "static/media/whatsapp.png": "/jasteria/static/media/whatsapp.879d771196b270a6dcc1.png",
     "static/media/instagram.png": "/jasteria/static/media/instagram.76bbf6d621aa6d268281.png",
     "static/media/telegram.png": "/jasteria/static/media/telegram.4ea3c7711ff09f32c9d6.png",
     "index.html": "/jasteria/index.html",
-    "main.ea419bc2.css.map": "/jasteria/static/css/main.ea419bc2.css.map",
-    "main.5da13ee8.js.map": "/jasteria/static/js/main.5da13ee8.js.map"
+    "main.ec3d745c.css.map": "/jasteria/static/css/main.ec3d745c.css.map",
+    "main.83dde8b5.js.map": "/jasteria/static/js/main.83dde8b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea419bc2.css",
-    "static/js/main.5da13ee8.js"
+    "static/css/main.ec3d745c.css",
+    "static/js/main.83dde8b5.js"
   ]
 }
