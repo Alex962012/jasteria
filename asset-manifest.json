@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/jasteria/static/css/main.f6a6fc92.css",
-    "main.js": "/jasteria/static/js/main.2f03a73c.js",
+    "main.css": "/jasteria/static/css/main.dc100731.css",
+    "main.js": "/jasteria/static/js/main.0ded6d85.js",
     "static/media/20231026_120514.jpg": "/jasteria/static/media/20231026_120514.f45ae756a62946d148e9.jpg",
     "static/media/20220610_190753.jpg": "/jasteria/static/media/20220610_190753.508d08d13fdf96f3347f.jpg",
     "static/media/101.jpg": "/jasteria/static/media/101.0a97a4ab673faf80e244.jpg",
@@ -14,11 +14,11 @@
     "static/media/instagram.png": "/jasteria/static/media/instagram.76bbf6d621aa6d268281.png",
     "static/media/telegram.png": "/jasteria/static/media/telegram.4ea3c7711ff09f32c9d6.png",
     "index.html": "/jasteria/index.html",
-    "main.f6a6fc92.css.map": "/jasteria/static/css/main.f6a6fc92.css.map",
-    "main.2f03a73c.js.map": "/jasteria/static/js/main.2f03a73c.js.map"
+    "main.dc100731.css.map": "/jasteria/static/css/main.dc100731.css.map",
+    "main.0ded6d85.js.map": "/jasteria/static/js/main.0ded6d85.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6a6fc92.css",
-    "static/js/main.2f03a73c.js"
+    "static/css/main.dc100731.css",
+    "static/js/main.0ded6d85.js"
   ]
 }
