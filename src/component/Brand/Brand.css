@@ -1,19 +1,344 @@
 .brand-title {
-    text-align: center;
-    color: var(--price-color);
-    font-family: "Cormorant Garamond", serif;
+  text-align: center;
+  color: var(--price-color);
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 800;
+  color: #0d3033;
 }
 
+.brand-section {
+  margin: 0 auto;
+  padding: 50px 0 50px 0;
+  width: 80%;
+  min-height: calc(100vh - 110px - 180px);
+  flex: 1 0 auto;
+}
 .brand-subtitle {
-    text-align: center;
-    color: var(--price-color);
-    font-family: "Cormorant Garamond", serif;
+  text-align: center;
+  color: var(--price-color);
+  font-family: "Join", serif;
+  color: #0d3033;
+  padding: 10px 0 30px 0;
+}
+.brand-content-subtitle {
+  font-size: 22px;
+}
+.brand-content-column-text:nth-child(1) {
+  width: 50%;
+  text-align: center;
+  margin-top: 30px;
+}
+.brand-content {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: justify;
+  color: rgb(66, 37, 15);
+  font-family: "Cormorant Garamond", sans-serif;
+}
+.brand-content-title {
+  color: #0d3033;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: italic;
+  padding: 30px 0;
+}
+.brand-content-subtitle-color {
+  background-color: #0d3033;
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 75%;
+  padding: 5px 15px;
+  margin: 0 auto;
+  margin-top: -120px;
+  margin-right: 20px;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+.brand-content-pic1 {
+  width: 520px;
+  height: 290px;
+  background-image: url("../../assets/20231026_113456.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.brand-content-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.brand-content-column-text:nth-child(2) {
+  width: 55%;
+  text-align: center;
+  margin-top: 16px;
 }
 
-.brand-content {
+.brand-content-pic2 {
+  margin-bottom: 50px;
+  width: 400px;
+  height: 550px;
+  background-image: url("../../assets/101.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.brand-content-subtitle-footer {
+  text-align: center;
+}
+@media only screen and (max-width: 1340px) {
+  .brand-section {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 1295px) {
+  .brand-content-column-text:nth-child(1) {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 1158px) {
+  .brand-content-pic1 {
+    width: 500px;
+  }
+  .brand-content-pic2 {
+    width: 380px;
+  }
+}
+@media only screen and (max-width: 1135px) {
+  .brand-content-pic1 {
+    width: 450px;
+  }
+  .brand-content-subtitle {
     font-size: 20px;
-    font-weight: 600;
-    text-align: justify;
-    color: rgb(66, 37, 15);
-    font-family: "Cormorant Garamond", sans-serif;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .brand-content-column-text:nth-child(1) {
+    margin-top: 10px;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 1020px) {
+  .brand-content-pic1 {
+    width: 400px;
+    height: 260px;
+  }
+  .brand-content-pic2 {
+    width: 360px;
+    height: 500px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .brand-content-column-text:nth-child(1) {
+    width: 45%;
+  }
+  .brand-content-pic2 {
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 967px) {
+  .brand-content-pic2 {
+    width: 300px;
+    height: 450px;
+  }
+  .brand-content-subtitle {
+    font-size: 18px;
+  }
+  .brand-content-title {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 891px) {
+  .brand-content-pic1 {
+    width: 350px;
+    height: 240px;
+  }
+}
+@media only screen and (max-width: 865px) {
+  .brand-content-title {
+    padding: 20px 0;
+  }
+}
+@media only screen and (max-width: 790px) {
+  .brand-content-subtitle {
+    font-size: 16px;
+  }
+  .brand-content-title {
+    font-size: 24px;
+  }
+  .brand-content-pic1 {
+    width: 300px;
+    height: 200px;
+  }
+  .brand-content-pic2 {
+    width: 260px;
+    height: 400px;
+  }
+  .brand-content-column-text:nth-child(1) {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 728px) {
+  .brand-title {
+    font-size: 24px;
+  }
+  .brand-subtitle {
+    font-size: 20px;
+  }
+  .brand-content-column-text:nth-child(1) {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 691px) {
+  .brand-content-pic1 {
+    width: 250px;
+    height: 200px;
+  }
+  .brand-content-pic2 {
+    width: 220px;
+    height: 360px;
+  }
+  .brand-content-subtitle {
+    font-size: 14px;
+  }
+  .brand-content-title {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .brand-section {
+    width: 90%;
+    padding: 20px 0 20px 0;
+  }
+}
+@media only screen and (max-width: 569px) {
+  .brand-subtitle {
+    font-size: 18px;
+  }
+  .brand-content-title {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 555px) {
+  .brand-section {
+    width: 93%;
+  }
+  .brand-content-pic2 {
+    width: 200px;
+    height: 320px;
+  }
+  .brand-content-subtitle-color {
+    margin-top: -70px;
+  }
+}
+@media only screen and (max-width: 507px) {
+  .brand-content-subtitle {
+    font-size: 12px;
+  }
+  .brand-content-subtitle-color {
+    margin-top: -100px;
+  }
+}
+@media only screen and (max-width: 490px) {
+  .brand-content-pic1 {
+    width: 200px;
+    height: 160px;
+  }
+  .brand-content-pic2 {
+    width: 160px;
+    height: 230px;
+  }
+  .brand-content-title {
+    padding: 10px 0;
+  }
+  .brand-content-subtitle-color {
+    margin-top: -70px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .brand-content-subtitle-color {
+    margin-top: -50px;
+  }
+}
+@media only screen and (max-width: 423px) {
+  .brand-content-subtitle {
+    font-size: 11px;
+  }
+  .brand-content-subtitle-color {
+    margin-top: -70px;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .brand-content-pic1 {
+    width: 160px;
+    height: 120px;
+  }
+  .brand-content-column-text:nth-child(1) {
+    width: 50%;
+  }
+  .brand-content-subtitle-color {
+    margin-top: -50px;
+  }
+}
+@media only screen and (max-width: 388px) {
+  .brand-title {
+    font-size: 20px;
+  }
+  .brand-subtitle {
+    font-size: 14px;
+  }
+  .brand-content-subtitle {
+    font-size: 10px;
+  }
+  .brand-content-title {
+    font-size: 16px;
+  }
+  .brand-content-pic2 {
+    width: 140px;
+    height: 190px;
+  }
+}
+@media only screen and (max-width: 373px) {
+  .brand-content-subtitle {
+    font-size: 9px;
+  }
+  .brand-subtitle {
+    padding: 10px 0 15px;
+  }
+  .brand-content-title {
+    font-size: 12px;
+  }
+  .brand-content-subtitle-color {
+    margin-top: -70px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .brand-content-column-text:nth-child(1) {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 341px) {
+  .brand-content-pic2 {
+    width: 130px;
+
+    margin-top: 20px;
+  }
+  .brand-content-column-text:nth-child(2) {
+    margin-top: 0px;
+  }
+}
+@media only screen and (max-width: 334px) {
+  .brand-content-pic2 {
+    margin-top: 35px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .brand-content-subtitle {
+    font-size: 8.5px;
+  }
+  .brand-content-pic2 {
+    margin-top: 10px;
+  }
 }

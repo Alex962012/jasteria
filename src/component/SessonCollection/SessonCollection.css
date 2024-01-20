@@ -6,10 +6,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .skelet {
-  width: 350px;
+  width: 250px;
   height: 380px;
   --highlight-color: #f5f5f5;
   --animation-duration: 1.5s;
@@ -30,35 +31,37 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 25px;
+  grid-column-gap: 85px;
   grid-row-gap: 0px;
   justify-items: center;
 }
 
 .session-title {
   color: var(--price-color);
-  font-size: 26px;
+  font-size: 37px;
   font-weight: 700;
-
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Jost", sans-serif;
 }
 
 .session-button {
-  font-family: "Cormorant Garamond", serif;
+  border-radius: 20px;
+  border: 1px solid var(--price-color);
+  font-family: "Jost", sans-serif;
   padding: 8px 25px;
-  border: 2px solid black;
-  border-radius: 30px;
+  font-size: 22px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-weight: 600;
-  color: black;
+  font-weight: 800;
+  color: var(--price-color);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 }
 
 .session-button a {
-  color: black;
+  color: var(--price-color);
 }
 
 .session-button-icon {
@@ -76,7 +79,7 @@
 }
 
 .session-button:hover {
-  background-color: black;
+  background-color: var(--price-color);
 }
 
 .session-button:hover .session-button-icon {
@@ -85,18 +88,19 @@
 
 @media only screen and (max-width: 1374px) {
   .skelet {
-    width: 330px;
-    height: 467px;
+    width: 100%;
+    max-width: 24vw;
+    height: 34vw;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .skelet {
-    width: 287px;
+    width: 300px;
     height: 360px;
   }
 }
-
+/* 
 @media only screen and (max-width: 1091px) {
   .item-session-container {
     grid-column-gap: 15px;
@@ -107,19 +111,25 @@
   .item-session-container {
     grid-column-gap: 10px;
   }
-}
+} */
 
 @media only screen and (max-width: 992px) {
   .skelet {
     width: 265px;
-    height: 320px;
+    max-width: 265px;
   }
 }
 
-@media only screen and (max-width: 815px) {
+@media only screen and (max-width: 900px) {
   .skelet {
     width: 230px;
     height: 280px;
+  }
+}
+@media only screen and (max-width: 785px) {
+  .skelet {
+    width: 200px;
+    height: 260px;
   }
 }
 
@@ -128,25 +138,45 @@
     width: 200px;
     height: 260px;
   }
+  .session-title {
+    font-size: 28px;
+  }
+  .session-button {
+    font-size: 16px;
+  }
 }
 
-@media only screen and (max-width: 662px) {
+@media only screen and (max-width: 695px) {
   .skelet {
     width: 180px;
     height: 240px;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 625px) {
   .skelet {
     width: 160px;
     height: 240px;
   }
 }
 
-@media only screen and (max-width: 539px) {
+@media only screen and (max-width: 546px) {
+  .session-container {
+    padding: 20px 0;
+  }
   .item-session-container {
     grid-column-gap: 7px;
+  }
+  .session-title {
+    font-size: 24px;
+  }
+  .session-button {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+  .skelet {
+    max-width: 145px;
+    height: 220px;
   }
 }
 
@@ -166,17 +196,11 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .item-session-container {
-    overflow: hidden;
-    width: 98.3%;
-    grid-column-gap: 10px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+@media only screen and (max-width: 498px) {
   .skelet {
-    width: 220px;
-    height: 280px;
+    max-width: 140px;
+    width: 140px;
+    height: 190px;
   }
 
   .session-title {
@@ -192,15 +216,22 @@
     font-size: 12px;
     padding: 4px 15px;
   }
-
+  @media only screen and (max-width: 485px) {
+    .skelet {
+      max-width: 120px;
+      height: 180px;
+    }
+  }
+  @media only screen and (max-width: 440px) {
+    .session-container {
+      margin: 20px 0 20px;
+    }
+  }
   @media only screen and (max-width: 423px) {
     .skelet {
-      width: 180px;
-      height: 250px;
+      width: 115px;
+      height: 170px;
     }
-
-
-
   }
 
   @media only screen and (max-width: 407px) {
@@ -217,27 +248,30 @@
       width: 20px;
       height: 20px;
     }
-
-    .item-session-container {
-      overflow: hidden;
-      width: 100%;
-      grid-column-gap: 15px;
+    .skelet {
+      max-width: 110px;
+      height: 165px;
     }
   }
 
-  @media only screen and (max-width: 380px) {
-    .item-session-container {
-      overflow: hidden;
-      width: 100%;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
+  @media only screen and (max-width: 390px) {
     .skelet {
-      width: 95px;
+      max-width: 110px;
+      height: 165px;  
+    }
+  }
+  @media only screen and (max-width: 383px) {
+.skelet{
+  max-width: 100px;
+  height: 150px;
+}
+  }
+  @media only screen and (max-width: 345px) {
+    .skelet{
+      max-width: 90px;
       height: 140px;
     }
   }
-
   @media only screen and (max-width: 330px) {
     .item-session-container {
       grid-column-gap: 5px;

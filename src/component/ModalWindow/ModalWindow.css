@@ -74,7 +74,8 @@
 .modal-title {
   font-size: 1.4em;
   font-weight: 700;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Join", serif;
+  color: var(--price-color);
 }
 
 .modal-price {
@@ -102,15 +103,18 @@
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   border-radius: 25px;
   display: flex;
+  font-family: "Jost", sans-serif;
   justify-content: center;
   border: 1px solid var(--price-color);
   align-items: center;
+  font-size: 22px;
 }
 
 .modal-button-order:hover {
   cursor: pointer;
   color: black;
   background-color: white;
+
 }
 
 .close-modal-icon {
@@ -372,6 +376,9 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .modal-button-order{
+    font-size: 18px;
+  }
   .modal {
     align-items: center;
     z-index: 4;

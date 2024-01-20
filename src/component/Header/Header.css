@@ -1,6 +1,9 @@
 header {
-  background-color: var(--header-color);
-  padding: 20px 0px;
+  background-image: url("../../assets/20231026_120514.jpg");
+  background-position-y: -130px;
+  padding: 0px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .nav-item:nth-child(1) {
@@ -8,7 +11,7 @@ header {
 }
 
 .header-content {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
@@ -36,15 +39,15 @@ header {
 }
 
 nav {
-  padding-top: 30px;
-  margin: 0 0 0 -60px;
+  padding-top: 20px;
+
   width: 60%;
   display: flex;
   justify-content: space-between;
 }
 
 .nav-item {
-  color: var(--price-color);
+  color: #0d3033;
   font-size: 1.6em;
   font-weight: 800;
   font-family: "Cormorant Garamond", serif;
@@ -73,21 +76,12 @@ li {
   .header-content {
     width: 90%;
   }
+  header {
+    background-position-y: -80px;
+  }
 }
-
-@media only screen and (max-width: 992px) {
-
-
-  .logo {
-    margin-top: 5px;
-    width: 160px;
-    height: 50px;
-  }
-
-  nav {
-    width: 68%;
-    padding-top: 20px;
-  }
+@media only screen and (max-width: 954px) {
+ 
 }
 
 @media only screen and (max-width: 891px) {
@@ -99,7 +93,11 @@ li {
     font-size: 1.6em;
   }
 }
-
+@media only screen and (max-width: 852px) {
+  header{
+    background-position-y:-50px ;
+  }
+}
 @media only screen and (max-width: 768px) {
   nav {
     width: 60%;
@@ -111,7 +109,7 @@ li {
   }
 
   .nav-item {
-    font-size: 12px;
+    font-size: 20px;
   }
 
   .number {
@@ -123,22 +121,53 @@ li {
     width: 120px;
     height: 50px;
   }
+  header {
+    background-position-y: -45px;
+  }
 }
 
 @media only screen and (max-width: 668px) {
   nav {
-    width: 78%;
+    width: 80%;
+    padding: 20px 20px 0 20px;
   }
 
   .header-wrapper {
-    width: 98%;
+    width: 90%;
+  }
+  .header-content {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 590px) {
+  .header-content {
+    width: 100%;
+  }
+  .logo-container{
+    padding-left: 20px;
+  }
+}
+@media only screen and (max-width: 552px) {
+  header{
+    background-position-y:-25px
+  }
+}
+@media only screen and (max-width: 541px) {
+  .nav-item{
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  header{
+    background-position-y: -25px;
+  }
+  .nav-item{
+    font-size: 16px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  header {
-    padding: 5px 0px;
-  }
+ 
 
   nav {
     margin: 0;
@@ -156,6 +185,7 @@ li {
   }
 
   .menu-btn {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 30px;
     height: 30px;
     position: relative;
@@ -163,7 +193,9 @@ li {
     margin-top: 15px;
     overflow: hidden;
   }
-
+  .menu-btn:hover{
+    cursor: pointer;
+  }
   .menu-btn span {
     width: 30px;
     height: 2px;
@@ -173,6 +205,7 @@ li {
     transform: translate(-50%, -50%);
     background-color: #222222;
     transition: all 0.5s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   .menu-btn span:nth-of-type(2) {
@@ -185,16 +218,19 @@ li {
 
   .menu-btn.active span:nth-of-type(1) {
     display: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   .menu-btn.active span:nth-of-type(2) {
     top: 50%;
     transform: translate(-50%, 0%) rotate(45deg);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   .menu-btn.active span:nth-of-type(3) {
     top: 50%;
     transform: translate(-50%, 0%) rotate(-45deg);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   .header-nav {
@@ -219,5 +255,24 @@ li {
 
   .header-nav a {
     list-style-type: none;
+  }
+}
+@media only screen and (max-width: 441px) {
+  header{
+    background-position-y:-5px;
+  }
+}
+@media only screen and (max-width: 374px) {
+  header{
+    background-position-y: -5px;
+  
+  }
+}
+@media only screen and (max-width: 321px) {
+  header{
+    background-position-y: 0px;
+  }
+  .logo{
+    margin-top: 0px;
   }
 }

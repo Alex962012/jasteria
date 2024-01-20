@@ -10,55 +10,94 @@ import { Faq } from "./pages/Faq/Faq";
 import { AboutBrand } from "./pages/AboutBrand/AboutBrand";
 import { useEffect, useState } from "react";
 import React from "react";
-import { LoginPage } from "./pages/LoginPage/LoginPage";
+import { ItemManagerAdd } from "./pages/ItemManagerAdd/ItemManagerAdd";
 import { AdminPanel } from "./pages/AdminPanel/AdminPanel";
-import { ItemManager } from "./pages/ItemManager/ItemManager";
+import { RequireAuth } from "./component/ReqireAuth/RequireAuth";
+import { Auth } from "./pages/Auth/Auth";
+import { TypeManagerAdd } from "./pages/TypeManagerAdd/TypeManagerAdd";
+import { YarnManagerAdd } from "./pages/YarnManagerAdd/YarnManagerAdd";
+import { SeasonManagerAdd } from "./pages/SeasonManagerAdd/SeasonManagerAdd";
 
 export const ItemsContext = React.createContext([]);
 function App() {
-  const [isAuth, setIsAuth] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [itemsHome, setItemsHome] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://jasteria-alex962012.amvera.io/newProducts/getAll`)
-      // fetch(`http://localhost:5000/newProducts/getAll`)
-      .then((res) => res.json())
-      .then((res) => {
-        setItemsHome(res);
-        setIsLoading(false);
-        window.scrollTo(0, 0);
-      });
-  }, []);
+   
+    fetch(`http://localhost:5000/newProducts/getAll`)
 
+    .then((res) => {
+         if (res.ok) {
+           return res.json()
+         }
+        })
+        .then((res) => {
+          setItemsHome(res);
+          setIsLoading(false);
+          window.scrollTo(0, 0);
+        });
+        
+  }, []);
   return (
     <div className="App">
       <ItemsContext.Provider value={itemsHome}>
         <div className="wrapper">
           <Header />
-          <div className="title-section">
-            <Routes>
-              <Route path="/" element={<Home isLoading={isLoading} />} />
+          <Routes>
+            <Route path="/" element={<Home isLoading={isLoading} />} />
+            <Route
+              path="/catalog"
+              element={
+                <Catalog isLoading={isLoading} setIsLoading={setIsLoading} />
+              }
+            />
+            <Route path="/feedback" element={<FeedbackPage />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/about" element={<AboutBrand />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route
+              path="/admin"
+              element={
+                <RequireAuth>
+                  <AdminPanel />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/item-manager-add"
+              element={
+                <RequireAuth>
+                  <ItemManagerAdd />
+                </RequireAuth>
+              }
+            ></Route>
+             <Route
+              path="/type-manager-add"
+              element={
+                <RequireAuth>
+                  <TypeManagerAdd />
+                </RequireAuth>
+              }
+            ></Route>
+             <Route
+              path="/yarn-manager-add"
+              element={
+                <RequireAuth>
+                  <YarnManagerAdd/>
+                </RequireAuth>
+              }
+            ></Route>
               <Route
-                path="/catalog"
-                element={
-                  <Catalog isLoading={isLoading} setIsLoading={setIsLoading} />
-                }
-              />
-              <Route path="/feedback" element={<FeedbackPage />} />
-              {isAuth ? (
-                <Route path="/admin" element={<AdminPanel />} />
-              ) : (
-                <Route path="/login" element={<LoginPage />} />
-              )}
-
-              <Route path="/faq" element={<Faq />} />
-              <Route path="/about" element={<AboutBrand />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/item-manager" element={<ItemManager />}></Route>
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
+              path="/season-manager-add"
+              element={
+                <RequireAuth>
+                  <SeasonManagerAdd/>
+                </RequireAuth>
+              }
+            ></Route>
+          </Routes>
           <Footer />
         </div>
       </ItemsContext.Provider>

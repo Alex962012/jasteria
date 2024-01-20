@@ -44,7 +44,7 @@ export const Header = () => {
               onClick={() => setOpenBurger(!openBurger)}
               className="nav-item"
             >
-              Обратная связь
+            Контакты
             </Link>
           </nav>
           <div

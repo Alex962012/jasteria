@@ -2,12 +2,11 @@ import { useState } from "react";
 import "./Item.css";
 import { Modal } from "../ModalWindow/ModalWindow";
 export type ItemProps = {
-  id: any;
-  imageUrl: string;
+  id: number;
+  imageUrl:  Array<string>;
   title: string;
   price: number;
   season: number;
-  images: Array<string>;
   description: string;
   typeYarn: 0;
 };
@@ -15,7 +14,6 @@ export const Item = ({
   imageUrl,
   title,
   price,
-  images,
   id,
   description,
 }: ItemProps) => {
@@ -24,10 +22,13 @@ export const Item = ({
   const onClickModal = () => {
     setActive(true);
   };
+
   return (
-    <div className="order-item">
+    <div 
+    className="order-item"
+    >
       <img
-        src={imageUrl}
+        src={`http://localhost:5000/images/${imageUrl[0]}`}
         alt={title}
         className="item-picture"
         onClick={() => onClickModal()}
@@ -43,7 +44,7 @@ export const Item = ({
         active={active}
         setActive={setActive}
         title={title}
-        images={images}
+        imageUrl={imageUrl}
         description={description}
         price={price}
       />

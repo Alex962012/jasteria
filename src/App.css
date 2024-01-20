@@ -1,9 +1,9 @@
 :root {
   --main-bg-color: #c19080;
   --main-br-color: #74635e;
-  --header-color: #eee2df;
+  --header-color: #d4d4d4;
   --base-color: #ebebeb;
-  --price-color: #432818;
+  --price-color:  #0D3033;
 }
 
 
@@ -12,8 +12,13 @@
   max-width: 1400px;
   /* width: 98%; */
   margin: 0 auto;
+  overflow: hidden;
   /* border: 2px solid var(--price-color); */
   /* border-radius: 20px; */
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
 
 a {
@@ -61,7 +66,4 @@ a {
     max-width: 320px;
   }
 
-  h1 {
-    font-size: 1em;
-  }
 }

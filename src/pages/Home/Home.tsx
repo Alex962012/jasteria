@@ -1,6 +1,5 @@
-import { SliderForHome } from "../../component/SliderForHome/SliderForHome";
 import "./Home.css";
-import { ItemProps } from "../../component/Item/Item";
+
 import { SessionCollection } from "../../component/SessonCollection/SessonCollection";
 import { ItemsContext } from "../../App";
 import { useContext } from "react";
@@ -9,23 +8,51 @@ export type ItemsProps = {
 };
 export const Home = ({ isLoading }: ItemsProps) => {
   const items = useContext(ItemsContext);
-  const itemsObj = [[], []];
-  const winter = (value: ItemProps) => value.season === 1;
-  const spring = (value: ItemProps) => value.season === 2;
-  itemsObj[0] = items.filter(winter);
-  itemsObj[1] = items.filter(spring);
 
   return (
-    <div>
-      <SliderForHome></SliderForHome>
-      {itemsObj.map((items: Array<ItemProps>, index: number) => (
-        <SessionCollection
-          items={items}
-          index={index}
-          key={index}
-          isLoading={isLoading}
-        />
-      ))}
+    <div className="homepage-wrapper">
+      <div className="home-image">
+        <div className="home-title">
+          <h1>
+            Свяжу твою <br />
+            мечту!
+          </h1>
+        </div>
+        <div className="home-subtitle">
+          <h2>
+            Здесь вязаные <br /> аксессуары
+            <br /> твоей мечты
+          </h2>
+        </div>
+      </div>
+      <div className="title-section-home">
+        <div>
+          <SessionCollection items={items} isLoading={isLoading} />
+        </div>
+        <div className="home-info">
+          <div className="home-info-title">Вместе с J.Asteria будь</div>
+          <div className="home-info-content">
+            <div className="home-info-content-column home-info-content-column-left">
+              <div className="home-info-content-img1">
+                <p className="home-info-content-text">игривой</p>
+              </div>
+            </div>
+            <div className="home-info-content-column home-info-content-column-right" >
+              <div className="home-info-content-img2">
+              <p className="home-info-content-text">яркой</p>
+              </div>
+              <div className="home-img-column">
+                <div className="home-info-content-img3">
+                <p className="home-info-content-text">утончённой</p>
+                </div>
+                <div className="home-info-content-img4">
+                <p className="home-info-content-text">милой</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

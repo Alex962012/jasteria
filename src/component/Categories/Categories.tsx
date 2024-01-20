@@ -1,12 +1,28 @@
-import { Dispatch } from "react";
+import { Dispatch, useEffect, useRef, useState } from "react";
 import "./Categories.css";
+import { IObj } from "../CategoriesList/CategoriesList";
+
+export const useClickOutside=(ref:any,callback:any)=>{
+const handleClick=(e:any)=>{
+  if(ref.current&&!ref.current.contains(e.target)){
+    callback()
+  }
+}
+useEffect(()=>{
+  document.addEventListener('mousedown',handleClick);
+  return()=>{
+    document.removeEventListener("mousedown",handleClick)
+  }
+})
+}
+
 
 //вид изделия
 interface ICategories {
-  activeCategory: number;
-  onClick: Dispatch<React.SetStateAction<number>>;
+  activeCategory: string;
+  onClick: Dispatch<React.SetStateAction<string>>;
   title: string;
-  categories: Array<string>;
+  categories: any;
   activeGroup: undefined;
   switchGroup: any;
 }
@@ -18,75 +34,82 @@ export const Categories = ({
   activeGroup,
   switchGroup,
 }: ICategories) => {
-  const onClickListItem = (i: number) => {
+  const onClickListItem = (_id: string, i: number) => {
+    setTypeI(i);
     switchGroup(undefined);
-    onClick(i);
+    onClick(_id);
+    setOpenPopup(!openPopup);
   };
 
+  const [typeI, setTypeI] = useState(0);
+  const [openPopup, setOpenPopup] = useState(false);
+ 
+  const menuRef=useRef(null)
+  useClickOutside(menuRef,()=>switchGroup(undefined))
+  // console.log(menuRef)
+  console.log(openPopup)
   return (
     <div className="categories-container ">
       <div
-        className={
-          activeCategory > 0
-            ? "categories_label category-item-active category-item"
-            : "categories_label category-item"
-        }
-        onClick={() => switchGroup(title)}
+        className={"categories_label  category-item"}
+        onClick={() => {
+          setOpenPopup(!openPopup);
+          switchGroup(title);
+        }}
       >
         <div className="category-select">
-          {activeCategory > 0 ? categories[activeCategory] : title}
+          {activeCategory !== "0" ? categories[typeI].name : title}
         </div>
-        <svg
-          className="categories_label-icon"
-          height="512px"
-          id="Layer_1"
-          version="1.1"
-          viewBox="0 0 512 512"
-          width="512px"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 " />
-        </svg>
+        {openPopup === false ? (
+          <svg
+            className="categories_label-icon"
+            height="512px"
+            id="Layer_1"
+            version="1.1"
+            viewBox="0 0 512 512"
+            width="512px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 " />
+          </svg>
+        ) : (
+          <svg
+            className="categories_label-icon-rotate"
+            height="512px"
+            id="Layer_1"
+            version="1.1"
+            viewBox="0 0 512 512"
+            width="512px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 " />
+          </svg>
+        )}
       </div>
       {activeGroup === title && (
         <div className="categories_popup">
-          <ul className="category-list">
-            {categories.map((category: string, i: number) => {
+          <ul className="category-list"  ref={menuRef}>
+            {categories.map((item: IObj, i: number) => {
               return (
                 <li
                   key={i}
-                  onClick={() => onClickListItem(i)}
+                  onClick={() => {
+                    setOpenPopup(!openPopup);
+                    onClickListItem(item._id, i);
+                  }}
                   className={
-                    activeCategory === i
+                    activeCategory === item._id
                       ? "category-item-active category-item"
                       : "category-item"
                   }
                 >
-                  {category}
+                  {item.name}
                 </li>
               );
             })}
           </ul>
         </div>
       )}
-      {/* {activeCategory > 0 && (
-        <div className="category-item-active category-item">
-          {categories[activeCategory]}
-          <svg
-            onClick={() => onClickListItem(0)}
-            className="close-modal-icon"
-            data-name="Layer 1"
-            height="200"
-            id="Layer_1"
-            viewBox="0 0 200 200"
-            width="200"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title />
-            <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
-          </svg>
-        </div>
-      )} */}
     </div>
   );
 };

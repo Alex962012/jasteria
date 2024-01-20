@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface filterState {
-  activeName: number;
-  activeYarn: number;
-  activeSeason: number;
+export interface filterState {
+  activeName: any;
+  activeYarn: any;
+  activeSeason: any;
 }
 
 const initialState: filterState = {
-  activeName: 0,
-  activeYarn: 0,
-  activeSeason: 0,
+  activeName: '0',
+  activeYarn: '0',
+  activeSeason: '0',
 };
 
 export const filterSlice = createSlice({
@@ -17,15 +17,15 @@ export const filterSlice = createSlice({
   initialState,
   reducers: {
     setActiveName(state, action) {
-      console.log(action);
+  
       state.activeName = action.payload;
     },
     setActiveYarn(state, action) {
-      console.log(action);
+
       state.activeYarn = action.payload;
     },
     setActiveSeason(state, action) {
-      console.log(action);
+
       state.activeSeason = action.payload;
     },
     setFilter(state, action) {

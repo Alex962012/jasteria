@@ -5,7 +5,7 @@ type ModalProps = {
   active: boolean;
   setActive: (value: boolean) => void;
   title: string;
-  images: Array<string>;
+  imageUrl: Array<string>;
   description: string;
   price: number;
 };
@@ -13,7 +13,7 @@ export const Modal = ({
   active,
   setActive,
   title,
-  images,
+  imageUrl,
   description,
   price,
 }: ModalProps) => {
@@ -24,11 +24,12 @@ export const Modal = ({
     >
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
         <Slider>
-          {images.map((image, id) => {
+          {imageUrl.map((image, id) => {
             return (
+             
               <div key={id}>
                 <div
-                  style={{ backgroundImage: `url(${image})` }}
+                  style={{ backgroundImage: `url(http://localhost:5000/images/${image})` }}
                   className="slider-img"
                 />
               </div>

@@ -16,6 +16,9 @@
   height: 20px;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.4em;
+  font-weight: 800;
+  color: var(--price-color);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .p {
@@ -26,19 +29,19 @@
   z-index: 1;
   visibility: hidden;
   opacity: 0;
-  font-family: "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .active-p {
   transition: 0.4s ease-in;
   visibility: visible;
   top: -10px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   position: relative;
   opacity: 1;
   display: flex;
   transform: translateY(0%);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .cont-p {
@@ -54,36 +57,74 @@
   text-align: justify;
   opacity: 1;
   width: 90%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+
   height: 100%;
   overflow: visible;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.2em;
+  margin: 10px 0 0px 20px;
+  color: var(--price-color);
 }
 
 .accordion-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin: 0 auto;
   width: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-@media only screen and (max-width: 1055px) {
+@media only screen and (max-width: 977px) {
   .accordion {
-    width: 80%;
-  }
-
-  .active-cont-p {
-
-    width: 80%;
-  }
-
-  .cont-p {
-    width: 80%;
-    margin: 0;
+    font-size: 16px;
   }
 }
-
-@media only screen and (max-width: 544px) {}
+@media only screen and (max-width: 858px) {
+  .active-cont-p {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (max-width: 773px) {
+  .active-cont-p {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 716px) {
+  .accordion {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .active-cont-p {
+    font-size: 0.95em;
+  }
+}
+@media only screen and (max-width: 615px) {
+  .accordion {
+    padding: 12px;
+  }
+}
+@media only screen and (max-width: 505px) {
+  .accordion {
+    font-size: 14px;
+  }
+  .active-cont-p {
+    font-size: 0.9em;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .active-cont-p {
+    font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .accordion {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .active-cont-p {
+    font-size: 0.75em;
+  }
+}
