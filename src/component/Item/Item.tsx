@@ -28,7 +28,7 @@ export const Item = ({
     className="order-item"
     >
       <img
-        src={`http://localhost:5000/images/${imageUrl[0]}`}
+        src={`https://jasteria.ru/images/${imageUrl[0]}`}
         alt={title}
         className="item-picture"
         onClick={() => onClickModal()}
