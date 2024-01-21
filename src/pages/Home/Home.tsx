@@ -27,7 +27,8 @@ export const Home = ({ isLoading }: ItemsProps) => {
       </div>
       <div className="title-section-home">
         <div>
-          <SessionCollection items={items} isLoading={isLoading} />
+          {items.length>0&&<SessionCollection items={items} isLoading={isLoading} />}
+          
         </div>
         <div className="home-info">
           <div className="home-info-title">Вместе с J.Asteria будь</div>
