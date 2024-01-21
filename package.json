@@ -2,7 +2,7 @@
   "name": "jasteria",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alex962012.github.io/jasteria/",
+  "homepage": "https://jasteria.ru/",
   "dependencies": {
     "@react-email/button": "0.0.8",
     "@react-email/html": "0.0.4",
