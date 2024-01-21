@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     setIsLoading(true);
    
-    fetch(`http://localhost:5000/newProducts/getAll`)
+    fetch(`https://jasteria.ru/api/newProducts/getAll`)
 
     .then((res) => {
          if (res.ok) {

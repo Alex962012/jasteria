@@ -47,7 +47,7 @@ export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
     window.scrollTo(0, 0);
     setIsLoading(true);
     fetch(
-      `http://localhost:5000/newProducts/filter?${typeName}${
+      `https://jasteria.ru/api/newProducts/filter?${typeName}${
         typeName ? "&" : ""
       }${typeYarn}${typeYarn ? "&" : ""}${typeSeason}`
     )
