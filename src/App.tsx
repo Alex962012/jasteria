@@ -11,6 +11,7 @@ import { AboutBrand } from "./pages/AboutBrand/AboutBrand";
 import { useEffect, useState } from "react";
 import React from "react";
 import { ItemManagerAdd } from "./pages/ItemManagerAdd/ItemManagerAdd";
+import { ItemManagerRemove } from "./pages/ItemManagerRemove/ItemManagerRemove";
 import { AdminPanel } from "./pages/AdminPanel/AdminPanel";
 import { RequireAuth } from "./component/ReqireAuth/RequireAuth";
 import { Auth } from "./pages/Auth/Auth";
@@ -68,6 +69,14 @@ function App() {
               element={
                 <RequireAuth>
                   <ItemManagerAdd />
+                </RequireAuth>
+              }
+            ></Route>
+            <Route
+              path="/item-manager-remove"
+              element={
+                <RequireAuth>
+                  <ItemManagerRemove />
                 </RequireAuth>
               }
             ></Route>

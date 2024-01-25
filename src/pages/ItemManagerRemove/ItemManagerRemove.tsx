@@ -4,7 +4,7 @@ import axios from "../../redux/axios";
 import { fetchProducts } from "../../redux/slices/products";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-export const ItemManagerAdd = () => {
+export const ItemManagerRemove = () => {
     const { products } = useSelector((state:any) => state.product);
     const dispatch = useDispatch();
     const [product, setProduct] = useState(null);
