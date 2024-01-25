@@ -24,9 +24,7 @@ function App() {
   const [itemsHome, setItemsHome] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-   
     fetch(`https://jasteria.ru/api/newProducts/getAll`)
-
     .then((res) => {
          if (res.ok) {
            return res.json()
