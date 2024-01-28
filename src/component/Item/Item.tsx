@@ -30,9 +30,7 @@ export const Item = ({
     >
       <img
         src={
-        // `https://jasteria.ru
-
-        `http://localhost:5000/images/${imageUrl[0]}`}
+        `https://jasteria.ru/images/${imageUrl[0]}`}
         alt={title}
         className="item-picture"
         onClick={() => onClickModal()}
