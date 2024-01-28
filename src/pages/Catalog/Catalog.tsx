@@ -49,8 +49,7 @@ export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
     fetch(
     
       // `http://localhost:5000/
-      `https://jasteria.ru/
-      api/newProducts/filter?${typeName}${
+      `https://jasteria.ru/api/newProducts/filter?${typeName}${
         typeName ? "&" : ""
       }${typeYarn}${typeYarn ? "&" : ""}${typeSeason}`
     )
