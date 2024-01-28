@@ -11,7 +11,14 @@ export const SessionCollection = ({
   items,
   isLoading,
 }: SessionCollectionProps) => {
+  const homeArray: any[]=[]
 
+  items.forEach((el:any)=>{
+   if(el.homePage){
+    homeArray.push(el)
+   }
+  })
+  console.log(homeArray)
   return (
     <div className="session-container">
       <div className="session-title-container">
@@ -29,9 +36,11 @@ export const SessionCollection = ({
           ? [...new Array(3)].map((_, index) => (
               <Skeleton key={index} className="skelet" count={1} />
             ))
-          : items.map((item: ItemProps, index: number) =>
-              index > 2 ? "" : <Item key={index} {...item} />
-            )}
+          : 
+         homeArray.length>=3?
+         homeArray.map((item: ItemProps, index: number) =>index > 2 ?"":<Item key={index} {...item} />)
+         : items.map((item: ItemProps, index: number) =>index > 2 ? "" : <Item key={index} {...item} />)
+            }
       </div>
     </div>
   );

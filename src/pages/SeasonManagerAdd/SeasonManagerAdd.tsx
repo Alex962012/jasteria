@@ -1,50 +1,43 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import {createSeason,fetchSeasons } from "../../redux/slices/seasons";
+import { createSeason, fetchSeasons } from "../../redux/slices/seasons";
 import { Link } from "react-router-dom";
 import "./SeasonManagerAdd.css";
 export const SeasonManagerAdd = () => {
-
-
-  const  {seasons}  = useSelector((state:any) => state.seasons);
+  const { seasons } = useSelector((state: any) => state.seasons);
   const dispatch = useDispatch();
-  const [season,setSeason] = useState<any>('');
+  const [season, setSeason] = useState<any>("");
 
   let result: string | any[];
-  let  seasonsData;
+  let seasonsData;
 
   if (seasons.items) {
-    seasonsData =  seasons.items;
-    result =  seasonsData.filter((i:any) => i.name.toLowerCase() ===   season.toLowerCase());
-}
-  console.log(seasons)
+    seasonsData = seasons.items;
+    result = seasonsData.filter(
+      (i: any) => i.name.toLowerCase() === season.toLowerCase()
+    );
+  }
   useEffect(() => {
     dispatch(fetchSeasons());
   }, [dispatch]);
 
-
-
   const resetParams = () => {
     setSeason("");
-
   };
   const addProduct = async (e: any) => {
     e.preventDefault();
-    if (season.length<=0) {
+    if (season.length <= 0) {
       alert("Введите сезон");
       return;
     }
- 
+
     if (result && result.length > 0) {
       alert("Такое название уже есть");
       return;
-  }
+    }
 
-
- 
-const formData = new FormData();
-formData.append("name", season);
-
+    const formData = new FormData();
+    formData.append("name", season);
 
     try {
       dispatch(createSeason(formData));
@@ -54,11 +47,11 @@ formData.append("name", season);
       console.log(response);
     }
   };
-  console.log(season)
+  console.log(season);
   return (
     <div>
       <div>
-        <h2>Создание товара</h2>
+        <h2>Создание сезона</h2>
       </div>
       <div>
         <Link to="/admin">Назад</Link>

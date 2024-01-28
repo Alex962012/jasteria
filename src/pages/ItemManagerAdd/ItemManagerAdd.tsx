@@ -21,6 +21,7 @@ export const ItemManagerAdd = () => {
   const [type, setType] = useState<any>('');
   const [season, setSeason] = useState<any>('');
   const [yarn, setYarn] = useState<any>('');
+  const [homePage,setHomePage]=useState<any>(false);
   let result: string | any[];
   let productsData;
   const imgContainer: any=[]
@@ -37,7 +38,7 @@ export const ItemManagerAdd = () => {
   const typesData = types.items;
   const seasonsData = seasons.items;
   const yarnsData = yarns.items;
-  
+  console.log(homePage)
   const [imageUrl, setImageUrl] = useState<any>([]);
   const handleChangeFile = async (event:any) => {
     try {
@@ -59,6 +60,9 @@ export const ItemManagerAdd = () => {
   const handleChangeYarn = (event?: any) => {
     setYarn(event.target.value);
   };
+  const handleChangeHomePage=()=>{
+    setHomePage(!homePage)
+  }
   const resetParams = () => {
     setTitle("");
     setPrice(0);
@@ -108,6 +112,7 @@ formData.append("price", String(price))
 formData.append("type", type)
 formData.append("season", season)
 formData.append("yarn", yarn)
+formData.append("homePage", homePage)
     try {
       dispatch(createProduct(formData));
       alert("Товар создан");
@@ -179,6 +184,10 @@ formData.append("yarn", yarn)
             </option>
           ))}
         </select>
+        <div>
+        <label >Поставить на главную страницу</label>
+        <input type="checkbox" checked={homePage} onChange={(handleChangeHomePage)}></input>
+        </div>
         <input
                     ref={inputFileRef}
                     onChange={handleChangeFile}

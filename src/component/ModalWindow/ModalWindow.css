@@ -23,7 +23,7 @@
 .modal-container {
   border-radius: 12px;
   background-color: white;
-  width: 70%;
+  /* width: 70%; */
   margin: 0 auto;
   display: flex;
 
@@ -360,6 +360,10 @@
 
   .right-button {
     margin-left: 62vw;
+  }
+  .modal-button-order{
+    margin-top: 20px;
+    font-size: 16px;
   }
 }
 

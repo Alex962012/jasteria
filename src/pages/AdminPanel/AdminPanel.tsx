@@ -24,7 +24,7 @@ export const AdminPanel = () => {
             <Link to={""}>Изменить сезон</Link>
           </button>
           <button>
-            <Link to={""}>Удалить сезон</Link>
+            <Link to={"/season-manager-remove"}>Удалить сезон</Link>
           </button>
         </div>
         <div>
@@ -35,7 +35,7 @@ export const AdminPanel = () => {
             <Link to={""}>Изменить тип изделия</Link>
           </button>
           <button>
-            <Link to={""}>Удалить тип изделия</Link>
+            <Link to={"/type-manager-remove"}>Удалить тип изделия</Link>
           </button>
         </div>
 
@@ -47,7 +47,7 @@ export const AdminPanel = () => {
             <Link to={""}>Изменить вид пряжи</Link>
           </button>
           <button>
-            <Link to={""}>Удалить вид пряжи</Link>
+            <Link to={"/yarn-manager-remove"}>Удалить вид пряжи</Link>
           </button>
         </div>
       </div>

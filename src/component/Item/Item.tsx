@@ -9,6 +9,7 @@ export type ItemProps = {
   season: number;
   description: string;
   typeYarn: 0;
+  homePage:string
 };
 export const Item = ({
   imageUrl,
@@ -28,7 +29,10 @@ export const Item = ({
     className="order-item"
     >
       <img
-        src={`https://jasteria.ru/images/${imageUrl[0]}`}
+        src={
+        // `https://jasteria.ru
+
+        `http://localhost:5000/images/${imageUrl[0]}`}
         alt={title}
         className="item-picture"
         onClick={() => onClickModal()}

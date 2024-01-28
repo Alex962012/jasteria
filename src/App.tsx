@@ -18,6 +18,9 @@ import { Auth } from "./pages/Auth/Auth";
 import { TypeManagerAdd } from "./pages/TypeManagerAdd/TypeManagerAdd";
 import { YarnManagerAdd } from "./pages/YarnManagerAdd/YarnManagerAdd";
 import { SeasonManagerAdd } from "./pages/SeasonManagerAdd/SeasonManagerAdd";
+import { SeasonManagerRemove } from "./pages/SeasonManagerRemove/SeasonManagerRemove";
+import { TypeManagerRemove } from "./pages/TypeManagerRemove/TypeManagerRemove";
+import { YarnManagerRemove } from "./pages/YarnManagerRemove/YarnManagerRemove";
 
 export const ItemsContext = React.createContext([]);
 function App() {
@@ -25,7 +28,10 @@ function App() {
   const [itemsHome, setItemsHome] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://jasteria.ru/api/newProducts/getAll`)
+    
+    fetch(
+    // http://localhost:5000/
+    `https://jasteria.ru/api/newProducts/getAll`)
     .then((res) => {
          if (res.ok) {
            return res.json()
@@ -88,6 +94,14 @@ function App() {
                 </RequireAuth>
               }
             ></Route>
+              <Route
+              path="/type-manager-remove"
+              element={
+                <RequireAuth>
+                  <TypeManagerRemove />
+                </RequireAuth>
+              }
+            ></Route>
              <Route
               path="/yarn-manager-add"
               element={
@@ -96,11 +110,27 @@ function App() {
                 </RequireAuth>
               }
             ></Route>
+            <Route
+              path="/yarn-manager-remove"
+              element={
+                <RequireAuth>
+                  <YarnManagerRemove/>
+                </RequireAuth>
+              }
+            ></Route>
               <Route
               path="/season-manager-add"
               element={
                 <RequireAuth>
                   <SeasonManagerAdd/>
+                </RequireAuth>
+              }
+            ></Route>
+              <Route
+              path="/season-manager-remove"
+              element={
+                <RequireAuth>
+                  <SeasonManagerRemove/>
                 </RequireAuth>
               }
             ></Route>

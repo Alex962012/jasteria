@@ -46,8 +46,6 @@ export const Categories = ({
  
   const menuRef=useRef(null)
   useClickOutside(menuRef,()=>switchGroup(undefined))
-  // console.log(menuRef)
-  console.log(openPopup)
   return (
     <div className="categories-container ">
       <div

@@ -58,7 +58,7 @@ formData.append("name", type);
   return (
     <div>
       <div>
-        <h2>Создание товара</h2>
+        <h2>Создание типа</h2>
       </div>
       <div>
         <Link to="/admin">Назад</Link>

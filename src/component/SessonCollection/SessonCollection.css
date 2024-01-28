@@ -125,6 +125,9 @@
     width: 230px;
     height: 280px;
   }
+  .item-session-container{
+    grid-column-gap: 25px;
+  }
 }
 @media only screen and (max-width: 785px) {
   .skelet {
@@ -160,7 +163,7 @@
   }
 }
 
-@media only screen and (max-width: 546px) {
+@media only screen and (max-width: 556px) {
   .session-container {
     padding: 20px 0;
   }

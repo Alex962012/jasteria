@@ -1,46 +1,45 @@
 
 import { Link } from "react-router-dom";
 import axios from "../../redux/axios";
-import { fetchProducts } from "../../redux/slices/products";
+import { fetchSeasons } from "../../redux/slices/seasons";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-export const ItemManagerRemove = () => {
-    const { products } = useSelector((state:any) => state.products);
+export const SeasonManagerRemove = () => {
+    const { seasons } = useSelector((state:any) => state.seasons);
     const dispatch = useDispatch();
-    const [product, setProduct] = useState(null);
+    const [season, setSeason] = useState(null);
     useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch, product]);
-    console.log(product)
-    const data = products.items;
-   const deleteProduct=async(e:any)=>{
+        dispatch(fetchSeasons());
+    }, [dispatch, season]);
+    const data = seasons.items;
+   const deleteSeason=async(e:any)=>{
     e.preventDefault();
     try {
-        if (product) {
-            await axios.delete(`/newProducts/remove/${product}`);
-            alert("Товар удален");
-            setProduct(null);
+        if (season) {
+            await axios.delete(`/season/remove/${season}`);
+            alert("Сезон удален");
+            setSeason(null);
         } else {
-            alert("Выберите товар для удаления");
+            alert("Выберите сезон для удаления");
         }
     } catch (e) {
         console.log(e);
     }
 };
 const handleChange = (event:any) => {
-    setProduct(event.target.value);
+    setSeason(event.target.value);
 };
 
   return (
     <div>
       <div>
-        <h2>Создание товара</h2>
+        <h2>Удаление сезона</h2>
       </div>
       <div>
         <Link to="/admin">Назад</Link>
       </div>
-      <form action="" className="product-form" onSubmit={deleteProduct}>
-      <label htmlFor="products" >Выберите товар для удаления :</label>
+      <form action="" className="product-form" onSubmit={deleteSeason}>
+      <label htmlFor="products" >Выберите сезон для удаления :</label>
                 <select 
                     id="products"
                     name="products"
@@ -49,11 +48,11 @@ const handleChange = (event:any) => {
                 >
                     <>
                         {" "}
-                        <option>Выберите товар</option>
+                        <option>Выберите сезон</option>
                     </>
                     {data.map((el:any) => (
                         <option value={el._id} key={el._id}>
-                            {el.title}
+                            {el.name}
                         </option>
                     ))}
                 </select>

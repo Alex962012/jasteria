@@ -29,7 +29,10 @@ export const Modal = ({
              
               <div key={id}>
                 <div
-                  style={{ backgroundImage: `url(https://jasteria.ru/images/${image})` }}
+                  style={{ backgroundImage: `url(http://localhost:5000/images/${image})` }}
+                    // https://jasteria.ru
+                    
+                
                   className="slider-img"
                 />
               </div>
