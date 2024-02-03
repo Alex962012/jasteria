@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Slider } from "../Slider/Slider";
 import "./ModalWindow.css";
+import { useState } from "react";
 type ModalProps = {
   active: boolean;
   setActive: (value: boolean) => void;
@@ -8,6 +9,7 @@ type ModalProps = {
   imageUrl: Array<string>;
   description: string;
   price: number;
+  toggleModal: any;
 };
 export const Modal = ({
   active,
@@ -16,20 +18,34 @@ export const Modal = ({
   imageUrl,
   description,
   price,
+  toggleModal,
 }: ModalProps) => {
+  const [offset, setOffset] = useState(0);
+
+  const firstPicture = () => {
+    setOffset(0);
+  };
+  const timeOut = () => {
+    setTimeout(firstPicture, 1000);
+  };
   return (
     <div
       className={active ? "modal active" : "modal"}
-      onClick={() => setActive(false)}
+      onClick={() => {
+        setActive(false);
+        toggleModal();
+        timeOut();
+      }}
     >
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-        <Slider>
+        <Slider offset={offset} setOffset={setOffset}>
           {imageUrl.map((image, id) => {
             return (
-             
               <div key={id}>
                 <div
-                  style={{ backgroundImage: `url(https://jasteria.ru/images/${image})` }}    
+                  style={{
+                    backgroundImage: `url(https://jasteria.ru/images/${image})`,
+                  }}
                   className="slider-img"
                 />
               </div>
@@ -38,7 +54,14 @@ export const Modal = ({
         </Slider>
         <div className="modal-content-container">
           <div className="close-modal-container">
-            <div className="close-modal" onClick={() => setActive(false)}>
+            <div
+              className="close-modal"
+              onClick={() => {
+                setActive(false);
+                toggleModal();
+                timeOut();
+              }}
+            >
               <svg
                 className="close-modal-icon"
                 data-name="Layer 1"

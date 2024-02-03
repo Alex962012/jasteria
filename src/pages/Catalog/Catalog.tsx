@@ -11,14 +11,13 @@ import {
 } from "../../redux/slices/filterSlice";
 import { RootState } from "../../redux/store";
 
-
 interface ICatalog {
   isLoading: boolean;
   setIsLoading: Dispatch<React.SetStateAction<boolean>>;
+  toggleModal: any;
 }
 
-export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
-
+export const Catalog = ({ isLoading, setIsLoading, toggleModal }: ICatalog) => {
   const dispatch = useDispatch();
   const [itemsCategory, setItemsCategory] = useState([]);
   const activeName = useSelector((state: RootState) => state.filter.activeName);
@@ -27,9 +26,10 @@ export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
     (state: RootState) => state.filter.activeSeason
   );
 
-  const typeYarn = activeYarn !=='0' ? `yarn=${activeYarn}` : "yarn=0";
-  const typeName = activeName !=='0' ? `type=${activeName}` : "type=0";
-  const typeSeason = activeSeason !=='0' ? `season=${activeSeason}` : "season=0";
+  const typeYarn = activeYarn !== "0" ? `yarn=${activeYarn}` : "yarn=0";
+  const typeName = activeName !== "0" ? `type=${activeName}` : "type=0";
+  const typeSeason =
+    activeSeason !== "0" ? `season=${activeSeason}` : "season=0";
 
   const onChangeActiveName = (i: SetStateAction<string>) => {
     dispatch(setActiveName(i));
@@ -38,16 +38,13 @@ export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
     dispatch(setActiveYarn(i));
   };
   const onChangeActiveSeason = (i: SetStateAction<string>) => {
-
     dispatch(setActiveSeason(i));
   };
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
     fetch(
-    
       // `http://localhost:5000/
       `https://jasteria.ru/api/newProducts/filter?${typeName}${
         typeName ? "&" : ""
@@ -56,36 +53,42 @@ export const Catalog = ({ isLoading, setIsLoading }: ICatalog) => {
       .then((res) => res.json())
       .then((res) => {
         setItemsCategory(res);
+
         setIsLoading(false);
       });
   }, [typeYarn, typeName, typeSeason, setIsLoading]);
 
+  let res: any;
+  if (itemsCategory) {
+    res = itemsCategory.reverse();
+  }
+
   return (
     <div className="catalog-wrapper">
-    <div className="order-section">
-      <div className="order-section--title">
-        Вы можете заказать любое изделие из каталога по своим меркам
-      </div>
+      <div className="order-section">
+        <div className="order-section--title">
+          Вы можете заказать любое изделие из каталога по своим меркам
+        </div>
 
-      <CategoriesList
-        activeYarn={activeYarn}
-        onClickYarn={onChangeActiveYarn}
-        activeName={activeName}
-        onClickName={onChangeActiveName}
-        activeSeason={activeSeason}
-        onClickSeason={onChangeActiveSeason}
-      ></CategoriesList>
+        <CategoriesList
+          activeYarn={activeYarn}
+          onClickYarn={onChangeActiveYarn}
+          activeName={activeName}
+          onClickName={onChangeActiveName}
+          activeSeason={activeSeason}
+          onClickSeason={onChangeActiveSeason}
+        ></CategoriesList>
 
-      <div className="content-order">
-        {isLoading
-          ? [...new Array(3)].map((_, index) => (
-              <Skeleton key={index} className="skelet" count={1} />
-            ))
-          : itemsCategory.map((item: ItemProps, index: number) => (
-              <Item {...item} key={index} />
-            ))}
+        <div className="content-order">
+          {isLoading
+            ? [...new Array(3)].map((_, index) => (
+                <Skeleton key={index} className="skelet" count={1} />
+              ))
+            : res.map((item: ItemProps, index: number) => (
+                <Item {...item} toggleModal={toggleModal} key={index} />
+              ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 };

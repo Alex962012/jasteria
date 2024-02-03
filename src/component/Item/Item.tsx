@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { Dispatch, useState } from "react";
 import "./Item.css";
 import { Modal } from "../ModalWindow/ModalWindow";
 export type ItemProps = {
   id: number;
-  imageUrl:  Array<string>;
+  imageUrl: Array<string>;
   title: string;
   price: number;
   season: number;
   description: string;
   typeYarn: 0;
-  homePage:string
+  homePage: string;
+  toggleModal: any;
 };
 export const Item = ({
   imageUrl,
@@ -17,6 +18,7 @@ export const Item = ({
   price,
   id,
   description,
+  toggleModal,
 }: ItemProps) => {
   const [active, setActive] = useState(false);
 
@@ -25,18 +27,24 @@ export const Item = ({
   };
 
   return (
-    <div 
-    className="order-item"
-    >
+    <div className="order-item">
       <img
-        src={
-        `https://jasteria.ru/images/${imageUrl[0]}`}
+        src={`https://jasteria.ru/images/${imageUrl[0]}`}
         alt={title}
         className="item-picture"
-        onClick={() => onClickModal()}
+        onClick={() => {
+          onClickModal();
+          toggleModal();
+        }}
       ></img>
       <div className="item-title-container">
-        <div className="item-name" onClick={() => onClickModal()}>
+        <div
+          className="item-name"
+          onClick={() => {
+            onClickModal();
+            toggleModal();
+          }}
+        >
           {title}
         </div>
       </div>
@@ -49,6 +57,7 @@ export const Item = ({
         imageUrl={imageUrl}
         description={description}
         price={price}
+        toggleModal={toggleModal}
       />
     </div>
   );

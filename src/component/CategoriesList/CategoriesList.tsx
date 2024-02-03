@@ -15,16 +15,16 @@ interface ICategoryList {
 }
 
 interface ICategory {
-  id:number;
+  id: number;
   title: string;
   categories: any;
-  activeCategory:string;
+  activeCategory: string;
   onClick: Dispatch<React.SetStateAction<string>>;
 }
-export interface IObj{
-  _id:string,
-  name:string,
-  _v:number
+export interface IObj {
+  _id: string;
+  name: string;
+  _v: number;
 }
 export const CategoriesList = ({
   activeYarn,
@@ -34,13 +34,12 @@ export const CategoriesList = ({
   activeSeason,
   onClickSeason,
 }: ICategoryList) => {
-  
-  const seasonCategoriesArray=[{_id:'0',name:'Все'}]
-  const yarnCategoriesArray=[{_id:'0',name:'Все'}]
-  const typeCategoriesArray=[{_id:'0',name:'Все'}]
-  const  {seasons}  = useSelector((state:RootState) => state.seasons);
-  const  {types}  = useSelector((state:RootState) => state.types);
-  const  {yarns}  = useSelector((state:RootState) => state.yarns);
+  const seasonCategoriesArray = [{ _id: "0", name: "Все" }];
+  const yarnCategoriesArray = [{ _id: "0", name: "Все" }];
+  const typeCategoriesArray = [{ _id: "0", name: "Все" }];
+  const { seasons } = useSelector((state: RootState) => state.seasons);
+  const { types } = useSelector((state: RootState) => state.types);
+  const { yarns } = useSelector((state: RootState) => state.yarns);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchSeasons());
@@ -48,23 +47,23 @@ export const CategoriesList = ({
     dispatch(fetchTypes());
   }, [dispatch]);
 
-  const slice=(obj:IObj)=>{
-    let res={_id:'0',name:''}
-    let n=obj.name[0].toUpperCase()+obj.name.substr(1)
-    res.name=n
-    res._id=obj._id
-    return res
-  }
-  seasons.items.forEach((item:IObj)=>{
-    seasonCategoriesArray.push(slice(item))
-  })  
-  yarns.items.forEach((item:IObj)=>{
-    yarnCategoriesArray.push(slice(item))
-  })
+  const slice = (obj: IObj) => {
+    let res = { _id: "0", name: "" };
+    let n = obj.name[0].toUpperCase() + obj.name.substr(1);
+    res.name = n;
+    res._id = obj._id;
+    return res;
+  };
+  seasons.items.forEach((item: IObj) => {
+    seasonCategoriesArray.push(slice(item));
+  });
+  yarns.items.forEach((item: IObj) => {
+    yarnCategoriesArray.push(slice(item));
+  });
 
-  types.items.forEach((item:IObj):void =>{
-    typeCategoriesArray.push(slice(item))
-  })
+  types.items.forEach((item: IObj): void => {
+    typeCategoriesArray.push(slice(item));
+  });
 
   const categoriesArray = [
     {
@@ -77,7 +76,7 @@ export const CategoriesList = ({
     {
       id: 2,
       title: "Сезон",
-      categories:seasonCategoriesArray,
+      categories: seasonCategoriesArray,
       activeCategory: activeSeason,
       onClick: onClickSeason,
     },
@@ -87,13 +86,10 @@ export const CategoriesList = ({
       categories: typeCategoriesArray,
       activeCategory: activeName,
       onClick: onClickName,
-    }
+    },
   ];
   const [activeGroup, setActiveGroup] = useState();
   const switchGroup = useCallback((title: undefined) => {
-  
- 
-
     setActiveGroup((activeTitle) =>
       activeTitle === title ? undefined : title
     );

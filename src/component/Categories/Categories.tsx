@@ -2,20 +2,19 @@ import { Dispatch, useEffect, useRef, useState } from "react";
 import "./Categories.css";
 import { IObj } from "../CategoriesList/CategoriesList";
 
-export const useClickOutside=(ref:any,callback:any)=>{
-const handleClick=(e:any)=>{
-  if(ref.current&&!ref.current.contains(e.target)){
-    callback()
-  }
-}
-useEffect(()=>{
-  document.addEventListener('mousedown',handleClick);
-  return()=>{
-    document.removeEventListener("mousedown",handleClick)
-  }
-})
-}
-
+export const useClickOutside = (ref: any, callback: any) => {
+  const handleClick = (e: any) => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  });
+};
 
 //вид изделия
 interface ICategories {
@@ -35,42 +34,53 @@ export const Categories = ({
   switchGroup,
 }: ICategories) => {
   const onClickListItem = (_id: string, i: number) => {
-    setTypeI(i);
+    // setTypeI(i);
     switchGroup(undefined);
     onClick(_id);
     setOpenPopup(!openPopup);
   };
 
-  const [typeI, setTypeI] = useState(0);
+  // const [typeI, setTypeI] = useState(0);
   const [openPopup, setOpenPopup] = useState(false);
- 
-  const menuRef=useRef(null)
-  useClickOutside(menuRef,()=>switchGroup(undefined))
+
+  const menuRef = useRef(null);
+  useClickOutside(menuRef, () => switchGroup(undefined));
+
+  let newId;
+  if (categories) {
+    let res = categories.find((yarn: any) => yarn._id === activeCategory);
+    if (res) {
+      newId = res.name;
+    }
+  }
+  console.log(newId);
+
   return (
     <div className="categories-container ">
       <div
         className={"categories_label  category-item"}
-        onClick={() => {
-          setOpenPopup(!openPopup);
+        onClick={(e: any) => {
+          // e.stopPropagation();
+          // setOpenPopup(!openPopup);
           switchGroup(title);
         }}
       >
         <div className="category-select">
-          {activeCategory !== "0" ? categories[typeI].name : title}
+          {activeCategory !== "0" ? newId : title}
         </div>
-        {openPopup === false ? (
-          <svg
-            className="categories_label-icon"
-            height="512px"
-            id="Layer_1"
-            version="1.1"
-            viewBox="0 0 512 512"
-            width="512px"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 " />
-          </svg>
-        ) : (
+        <svg
+          className="categories_label-icon"
+          height="512px"
+          id="Layer_1"
+          version="1.1"
+          viewBox="0 0 512 512"
+          width="512px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 " />
+        </svg>
+
+        {/* : (
           <svg
             className="categories_label-icon-rotate"
             height="512px"
@@ -82,11 +92,11 @@ export const Categories = ({
           >
             <polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 " />
           </svg>
-        )}
+        )} */}
       </div>
       {activeGroup === title && (
         <div className="categories_popup">
-          <ul className="category-list"  ref={menuRef}>
+          <ul className="category-list" ref={menuRef}>
             {categories.map((item: IObj, i: number) => {
               return (
                 <li

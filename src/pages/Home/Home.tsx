@@ -5,8 +5,9 @@ import { ItemsContext } from "../../App";
 import { useContext } from "react";
 export type ItemsProps = {
   isLoading: boolean;
+  toggleModal: any;
 };
-export const Home = ({ isLoading }: ItemsProps) => {
+export const Home = ({ isLoading, toggleModal }: ItemsProps) => {
   const items = useContext(ItemsContext);
 
   return (
@@ -27,8 +28,15 @@ export const Home = ({ isLoading }: ItemsProps) => {
       </div>
       <div className="title-section-home">
         <div>
-          {items.length>0?<SessionCollection items={items} isLoading={isLoading} />:''}
-          
+          {items.length > 0 ? (
+            <SessionCollection
+              items={items}
+              toggleModal={toggleModal}
+              isLoading={isLoading}
+            />
+          ) : (
+            ""
+          )}
         </div>
         <div className="home-info">
           <div className="home-info-title">Вместе с J.Asteria будь</div>
@@ -38,16 +46,16 @@ export const Home = ({ isLoading }: ItemsProps) => {
                 <p className="home-info-content-text">игривой</p>
               </div>
             </div>
-            <div className="home-info-content-column home-info-content-column-right" >
+            <div className="home-info-content-column home-info-content-column-right">
               <div className="home-info-content-img2">
-              <p className="home-info-content-text">яркой</p>
+                <p className="home-info-content-text">яркой</p>
               </div>
               <div className="home-img-column">
                 <div className="home-info-content-img3">
-                <p className="home-info-content-text">утончённой</p>
+                  <p className="home-info-content-text">утончённой</p>
                 </div>
                 <div className="home-info-content-img4">
-                <p className="home-info-content-text">милой</p>
+                  <p className="home-info-content-text">милой</p>
                 </div>
               </div>
             </div>

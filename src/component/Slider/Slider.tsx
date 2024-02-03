@@ -1,10 +1,11 @@
 import { Children, cloneElement, useEffect, useState } from "react";
 import "./Slider.css";
 
-export const Slider = ({ children }: any) => {
+export const Slider = ({ children, offset, setOffset }: any) => {
   const PAGE_WIDTH = 600;
   const [pages, setPages] = useState([]);
-  const [offset, setOffset] = useState(0);
+  // const [offset, setOffset] = useState(0);
+  // console.log(offset);
   useEffect(() => {
     setPages(
       Children.map(children, (child) => {

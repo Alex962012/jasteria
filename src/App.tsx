@@ -26,23 +26,28 @@ export const ItemsContext = React.createContext([]);
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [itemsHome, setItemsHome] = useState([]);
+
+  const toggleModal = () => {
+    document.body.classList.toggle("modal-open");
+  };
+
   useEffect(() => {
     setIsLoading(true);
-    
+
     fetch(
-    // http://localhost:5000/
-    `https://jasteria.ru/api/newProducts/getAll`)
-    .then((res) => {
-         if (res.ok) {
-           return res.json()
-         }
-        })
-        .then((res) => {
-          setItemsHome(res);
-          setIsLoading(false);
-          window.scrollTo(0, 0);
-        });
-        
+      // http://localhost:5000/
+      `https://jasteria.ru/api/newProducts/getAll`
+    )
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((res) => {
+        setItemsHome(res);
+        setIsLoading(false);
+        window.scrollTo(0, 0);
+      });
   }, []);
   return (
     <div className="App">
@@ -50,11 +55,18 @@ function App() {
         <div className="wrapper">
           <Header />
           <Routes>
-            <Route path="/" element={<Home isLoading={isLoading} />} />
+            <Route
+              path="/"
+              element={<Home isLoading={isLoading} toggleModal={toggleModal} />}
+            />
             <Route
               path="/catalog"
               element={
-                <Catalog isLoading={isLoading} setIsLoading={setIsLoading} />
+                <Catalog
+                  isLoading={isLoading}
+                  setIsLoading={setIsLoading}
+                  toggleModal={toggleModal}
+                />
               }
             />
             <Route path="/feedback" element={<FeedbackPage />} />
@@ -86,7 +98,7 @@ function App() {
                 </RequireAuth>
               }
             ></Route>
-             <Route
+            <Route
               path="/type-manager-add"
               element={
                 <RequireAuth>
@@ -94,7 +106,7 @@ function App() {
                 </RequireAuth>
               }
             ></Route>
-              <Route
+            <Route
               path="/type-manager-remove"
               element={
                 <RequireAuth>
@@ -102,11 +114,11 @@ function App() {
                 </RequireAuth>
               }
             ></Route>
-             <Route
+            <Route
               path="/yarn-manager-add"
               element={
                 <RequireAuth>
-                  <YarnManagerAdd/>
+                  <YarnManagerAdd />
                 </RequireAuth>
               }
             ></Route>
@@ -114,23 +126,23 @@ function App() {
               path="/yarn-manager-remove"
               element={
                 <RequireAuth>
-                  <YarnManagerRemove/>
+                  <YarnManagerRemove />
                 </RequireAuth>
               }
             ></Route>
-              <Route
+            <Route
               path="/season-manager-add"
               element={
                 <RequireAuth>
-                  <SeasonManagerAdd/>
+                  <SeasonManagerAdd />
                 </RequireAuth>
               }
             ></Route>
-              <Route
+            <Route
               path="/season-manager-remove"
               element={
                 <RequireAuth>
-                  <SeasonManagerRemove/>
+                  <SeasonManagerRemove />
                 </RequireAuth>
               }
             ></Route>
