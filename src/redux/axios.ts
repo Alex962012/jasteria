@@ -2,6 +2,6 @@ import axios from "axios";
 
 const instance = axios.create({
   // baseURL: "http://localhost:5000/api",
-  baseURL: "https://jasteria.ru/api",
+  baseURL: "/api",
 });
 export default instance;
