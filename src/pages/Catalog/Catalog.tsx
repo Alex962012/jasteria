@@ -45,23 +45,23 @@ export const Catalog = ({ isLoading, setIsLoading, toggleModal }: ICatalog) => {
     window.scrollTo(0, 0);
     setIsLoading(true);
     fetch(
-      // `http://localhost:5000/
       `https://jasteria.ru/api/newProducts/filter?${typeName}${
         typeName ? "&" : ""
       }${typeYarn}${typeYarn ? "&" : ""}${typeSeason}`
     )
       .then((res) => res.json())
       .then((res) => {
-        setItemsCategory(res);
+        setItemsCategory(res.reverse());
 
         setIsLoading(false);
       });
   }, [typeYarn, typeName, typeSeason, setIsLoading]);
 
-  let res: any;
-  if (itemsCategory) {
-    res = itemsCategory.reverse();
-  }
+  // let res: any;
+  // console.log(itemsCategory)
+  // if (itemsCategory.length > 0) {
+  //   res = itemsCategory.reverse();
+  // }
 
   return (
     <div className="catalog-wrapper">
@@ -84,7 +84,7 @@ export const Catalog = ({ isLoading, setIsLoading, toggleModal }: ICatalog) => {
             ? [...new Array(3)].map((_, index) => (
                 <Skeleton key={index} className="skelet" count={1} />
               ))
-            : res.map((item: ItemProps, index: number) => (
+            : itemsCategory.map((item: ItemProps, index: number) => (
                 <Item {...item} toggleModal={toggleModal} key={index} />
               ))}
         </div>

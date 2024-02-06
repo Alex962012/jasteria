@@ -19,7 +19,7 @@
 .modal.active {
   opacity: 1;
   pointer-events: all;
-
+  overflow-y: auto
 }
 
 .modal-container {

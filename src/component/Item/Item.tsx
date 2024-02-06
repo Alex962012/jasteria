@@ -10,6 +10,7 @@ export type ItemProps = {
   description: string;
   typeYarn: 0;
   homePage: string;
+  label: string;
   toggleModal: any;
 };
 export const Item = ({
@@ -18,6 +19,7 @@ export const Item = ({
   price,
   id,
   description,
+  label,
   toggleModal,
 }: ItemProps) => {
   const [active, setActive] = useState(false);
@@ -57,6 +59,7 @@ export const Item = ({
         imageUrl={imageUrl}
         description={description}
         price={price}
+        label={label}
         toggleModal={toggleModal}
       />
     </div>

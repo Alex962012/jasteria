@@ -9,6 +9,7 @@ type ModalProps = {
   imageUrl: Array<string>;
   description: string;
   price: number;
+  label: string;
   toggleModal: any;
 };
 export const Modal = ({
@@ -18,6 +19,7 @@ export const Modal = ({
   imageUrl,
   description,
   price,
+  label,
   toggleModal,
 }: ModalProps) => {
   const [offset, setOffset] = useState(0);
@@ -28,6 +30,7 @@ export const Modal = ({
   const timeOut = () => {
     setTimeout(firstPicture, 1000);
   };
+  console.log(label);
   return (
     <div
       className={active ? "modal active" : "modal"}
@@ -44,7 +47,7 @@ export const Modal = ({
               <div key={id}>
                 <div
                   style={{
-                    backgroundImage: `url(https://jasteria.ru/images/${image})`,
+                    backgroundImage: `url( https://jasteria.ru/images/${image})`,
                   }}
                   className="slider-img"
                 />
@@ -80,7 +83,7 @@ export const Modal = ({
             <div className="modal-title">{title}</div>
             <div className="modal-price">{price} руб.</div>
             <div className="modal-description">{description}</div>
-
+            <div className="modal-label">{label}</div>
             <Link className="modal-button-order" to="/feedback">
               Заказать
             </Link>

@@ -53,7 +53,6 @@ export const Categories = ({
       newId = res.name;
     }
   }
-  console.log(newId);
 
   return (
     <div className="categories-container ">

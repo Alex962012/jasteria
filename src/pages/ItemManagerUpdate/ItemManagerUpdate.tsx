@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { fetchTypes } from "../../redux/slices/types";
 import { fetchSeasons } from "../../redux/slices/seasons";
 import { fetchYarns } from "../../redux/slices/yarns";
+
 export const ItemManagerUpdate = () => {
   const { products } = useSelector((state: any) => state.products);
   const { types } = useSelector((state: any) => state.types);
@@ -26,6 +27,7 @@ export const ItemManagerUpdate = () => {
   const [type, setType] = useState<any>("");
   const [season, setSeason] = useState<any>("");
   const [yarn, setYarn] = useState<any>("");
+  const [label, setLabel] = useState("");
   let result: string | any[];
   let productsData;
   const imgContainer: any = [];
@@ -46,6 +48,7 @@ export const ItemManagerUpdate = () => {
 
     setTitle(newData.title);
     setDescription(newData.description);
+    setLabel(newData.label);
     setPrice(newData.price);
     setSeason(newData.season);
     setYarn(newData.yarn);
@@ -92,6 +95,7 @@ export const ItemManagerUpdate = () => {
     setPrice(0);
     setDescription("");
     setType(0);
+    setLabel("");
     setSeason(0);
     setYarn(0);
     setImageUrl([]);
@@ -133,11 +137,12 @@ export const ItemManagerUpdate = () => {
     formData.append("description", description);
     formData.append("price", String(price));
     formData.append("type", type);
+    formData.append("label", label);
     formData.append("season", season);
     formData.append("yarn", yarn);
     formData.append("homePage", homePage);
     try {
-      // dispatch(updateProduct(formData));
+      await axios.put(`/newProducts/update/${product}`, formData);
       alert("Товар изменен");
       resetParams();
     } catch (response) {
@@ -183,6 +188,15 @@ export const ItemManagerUpdate = () => {
           placeholder="Тёплые варежки"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+        />
+        <label htmlFor="label">Введите дополнительную информацию</label>
+        <input
+          type="text"
+          id="label"
+          name="label"
+          placeholder="Подшить подклад"
+          value={label}
+          onChange={(e) => setLabel(e.target.value)}
         />
         <label htmlFor="price">Введите цену товара</label>
         <input
