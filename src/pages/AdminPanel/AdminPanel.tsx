@@ -10,7 +10,7 @@ export const AdminPanel = () => {
             <Link to={"/item-manager-add"}>Добавить товар</Link>
           </button>
           <button>
-            <Link to={"/item-manager-upload"}>Изменить товар</Link>
+            <Link to={"/item-manager-update"}>Изменить товар</Link>
           </button>
           <button>
             <Link to={"/item-manager-remove"}>Удалить товар</Link>

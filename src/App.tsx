@@ -21,6 +21,7 @@ import { SeasonManagerAdd } from "./pages/SeasonManagerAdd/SeasonManagerAdd";
 import { SeasonManagerRemove } from "./pages/SeasonManagerRemove/SeasonManagerRemove";
 import { TypeManagerRemove } from "./pages/TypeManagerRemove/TypeManagerRemove";
 import { YarnManagerRemove } from "./pages/YarnManagerRemove/YarnManagerRemove";
+import { ItemManagerUpdate } from "./pages/ItemManagerUpdate/ItemManagerUpdate";
 
 export const ItemsContext = React.createContext([]);
 function App() {
@@ -87,6 +88,14 @@ function App() {
               element={
                 <RequireAuth>
                   <ItemManagerAdd />
+                </RequireAuth>
+              }
+            ></Route>
+            <Route
+              path="/item-manager-update"
+              element={
+                <RequireAuth>
+                  <ItemManagerUpdate />
                 </RequireAuth>
               }
             ></Route>

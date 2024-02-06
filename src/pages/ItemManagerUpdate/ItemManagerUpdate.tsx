@@ -1,28 +1,31 @@
+import { Link } from "react-router-dom";
+import axios from "../../redux/axios";
+import { fetchProducts } from "../../redux/slices/products";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import { fetchTypes } from "../../redux/slices/types";
 import { fetchSeasons } from "../../redux/slices/seasons";
-import { Link } from "react-router-dom";
-import "./ItemManagerAdd.css";
 import { fetchYarns } from "../../redux/slices/yarns";
-
-import { createProduct, fetchProducts } from "../../redux/slices/products";
-export const ItemManagerAdd = () => {
+export const ItemManagerUpdate = () => {
+  const { products } = useSelector((state: any) => state.products);
   const { types } = useSelector((state: any) => state.types);
   const { seasons } = useSelector((state: any) => state.seasons);
   const { yarns } = useSelector((state: any) => state.yarns);
-
-  const { products } = useSelector((state: any) => state.products);
-  const inputFileRef = useRef<any>(null);
   const dispatch = useDispatch();
+  const [product, setProduct] = useState(null);
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch, product]);
+
+  const inputFileRef = useRef<any>(null);
+  const data = products.items;
   const [title, setTitle] = useState("");
+  const [homePage, setHomePage] = useState<any>(false);
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
-  const [label, setLabel] = useState("");
   const [type, setType] = useState<any>("");
   const [season, setSeason] = useState<any>("");
   const [yarn, setYarn] = useState<any>("");
-  const [homePage, setHomePage] = useState<any>(false);
   let result: string | any[];
   let productsData;
   const imgContainer: any = [];
@@ -30,6 +33,26 @@ export const ItemManagerAdd = () => {
     productsData = products.items;
     result = productsData.filter((i: any) => i.title === title);
   }
+
+  const handleChange = (event: any) => {
+    setProduct(event.target.value);
+    let newData;
+    if (data) {
+      let res = data.find((item: any) => item._id === event.target.value);
+      if (res) {
+        newData = res;
+      }
+    }
+
+    setTitle(newData.title);
+    setDescription(newData.description);
+    setPrice(newData.price);
+    setSeason(newData.season);
+    setYarn(newData.yarn);
+    setType(newData.type);
+    setHomePage(newData.homePage);
+  };
+
   useEffect(() => {
     dispatch(fetchTypes());
     dispatch(fetchSeasons());
@@ -68,16 +91,15 @@ export const ItemManagerAdd = () => {
     setTitle("");
     setPrice(0);
     setDescription("");
-    setLabel("");
     setType(0);
     setSeason(0);
     setYarn(0);
     setImageUrl([]);
     inputFileRef.current.value = null;
   };
-  const addProduct = async (e: any) => {
+  const updateProduct = async (e: any) => {
     e.preventDefault();
-    if (!type) {
+    if (!product) {
       alert("Выберите категорию");
       return;
     }
@@ -109,15 +131,14 @@ export const ItemManagerAdd = () => {
       formData.append("imageUrl", imageUrl[0]);
     }
     formData.append("description", description);
-    formData.append("label", label);
     formData.append("price", String(price));
     formData.append("type", type);
     formData.append("season", season);
     formData.append("yarn", yarn);
     formData.append("homePage", homePage);
     try {
-      dispatch(createProduct(formData));
-      alert("Товар создан");
+      // dispatch(updateProduct(formData));
+      alert("Товар изменен");
       resetParams();
     } catch (response) {
       console.log(response);
@@ -126,12 +147,25 @@ export const ItemManagerAdd = () => {
   return (
     <div>
       <div>
-        <h2>Создание товара</h2>
+        <h2>Изменение товара</h2>
       </div>
       <div>
         <Link to="/admin">Назад</Link>
       </div>
-      <form action="" className="product-form" onSubmit={addProduct}>
+      <form action="" className="product-form" onSubmit={updateProduct}>
+        <label htmlFor="products">Выберите товар для изменения :</label>
+        <select id="products" name="products" onChange={handleChange}>
+          <>
+            {" "}
+            <option>Выберите товар</option>
+          </>
+          {data.map((el: any) => (
+            <option value={el._id} label={el.title} key={el._id}>
+              {el.title}
+            </option>
+          ))}
+        </select>
+
         <label htmlFor="title">Введите название товара</label>
         <input
           type="text"
@@ -150,22 +184,13 @@ export const ItemManagerAdd = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <label htmlFor="label">Введите дополнительную информацию</label>
-        <input
-          type="text"
-          id="label"
-          name="label"
-          placeholder="Подшить подклад"
-          value={label}
-          onChange={(e) => setLabel(e.target.value)}
-        />
         <label htmlFor="price">Введите цену товара</label>
         <input
           type="number"
           id="price"
           name="price"
           placeholder="1000"
-          // value={price}
+          value={price}
           onChange={(e) => setPrice(Number(e.target.value))}
         />
         <label htmlFor="season">Выберите сезон:</label>
@@ -230,7 +255,7 @@ export const ItemManagerAdd = () => {
           type="file"
           multiple
         />
-        <button type="submit">Создать </button>
+        <button type="submit">Изменить товар </button>
       </form>
     </div>
   );
