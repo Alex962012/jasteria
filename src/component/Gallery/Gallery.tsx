@@ -4,7 +4,6 @@ import "./Gallery.css";
 
 export const Gallery = (item: any) => {
   const images: any = [];
-  console.log(item.item);
   item.item.map((el: any) =>
     images.push({
       original: "https://jasteria.ru/images/" + el,

@@ -22,7 +22,6 @@ export const Modal = ({
   label,
   toggleModal,
 }: ModalProps) => {
-  console.log(label);
   return (
     <div
       className={active ? "modal active" : "modal"}
