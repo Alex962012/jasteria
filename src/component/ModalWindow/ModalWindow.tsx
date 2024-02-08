@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Slider } from "../Slider/Slider";
+
 import "./ModalWindow.css";
-import { useState } from "react";
+import { Gallery } from "../Gallery/Gallery";
 type ModalProps = {
   active: boolean;
   setActive: (value: boolean) => void;
@@ -22,14 +22,6 @@ export const Modal = ({
   label,
   toggleModal,
 }: ModalProps) => {
-  const [offset, setOffset] = useState(0);
-
-  const firstPicture = () => {
-    setOffset(0);
-  };
-  const timeOut = () => {
-    setTimeout(firstPicture, 1000);
-  };
   console.log(label);
   return (
     <div
@@ -37,24 +29,10 @@ export const Modal = ({
       onClick={() => {
         setActive(false);
         toggleModal();
-        timeOut();
       }}
     >
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-        <Slider offset={offset} setOffset={setOffset}>
-          {imageUrl.map((image, id) => {
-            return (
-              <div key={id}>
-                <div
-                  style={{
-                    backgroundImage: `url( https://jasteria.ru/images/${image})`,
-                  }}
-                  className="slider-img"
-                />
-              </div>
-            );
-          })}
-        </Slider>
+        <Gallery item={imageUrl}></Gallery>
         <div className="modal-content-container">
           <div className="close-modal-container">
             <div
@@ -62,7 +40,6 @@ export const Modal = ({
               onClick={() => {
                 setActive(false);
                 toggleModal();
-                timeOut();
               }}
             >
               <svg
@@ -84,7 +61,11 @@ export const Modal = ({
             <div className="modal-price">{price} руб.</div>
             <div className="modal-description">{description}</div>
             <div className="modal-label">{label}</div>
-            <Link className="modal-button-order" to="/feedback">
+            <Link
+              className="modal-button-order"
+              to="/feedback"
+              onClick={() => toggleModal()}
+            >
               Заказать
             </Link>
           </div>

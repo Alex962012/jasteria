@@ -1,4 +1,4 @@
-import { Dispatch, useState } from "react";
+import { useState } from "react";
 import "./Item.css";
 import { Modal } from "../ModalWindow/ModalWindow";
 export type ItemProps = {

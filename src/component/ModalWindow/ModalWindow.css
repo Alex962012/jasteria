@@ -19,7 +19,6 @@
 .modal.active {
   opacity: 1;
   pointer-events: all;
-  overflow-y: auto
 }
 
 .modal-container {
@@ -77,9 +76,9 @@
 }
 
 .modal-title {
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-weight: 700;
-  font-family: "Join", serif;
+  font-family: 'Jost', sans-serif;
   color: var(--price-color);
 }
 
@@ -88,6 +87,7 @@
   font-family: "Cormorant Garamond", serif;
   font-weight: 700;
   padding: 20px 0;
+  color: var(--price-color);
 }
 
 .modal-description {
@@ -96,6 +96,13 @@
   /* font-weight: 700; */
   text-align: justify;
   color: var(--price-color);
+}
+
+.modal-label {
+  color: var(--price-color);
+  padding: 20px 0 20px;
+  font-family: "EB Garamond", serif;
+  font-size: 1.2em;
 }
 
 .modal-button-order {
@@ -130,6 +137,7 @@
 .modal-content-container {
   display: flex;
   flex-direction: column;
+  width: 70%;
 }
 
 .close-modal-container {
@@ -220,6 +228,10 @@
     max-width: 350px;
     height: 466px;
   }
+}
+
+.modal-content-container {
+  width: 10 0%;
 }
 
 @media only screen and (max-width: 885px) {
@@ -354,8 +366,12 @@
     width: 40px;
     position: absolute;
     /* top: 18%; */
-    margin-top: -70%;
-    left: 75%;
+    top: -5%;
+    left: 100%;
+  }
+
+  .modal-content-container {
+    width: 100%;
   }
 
   .window {
@@ -390,6 +406,10 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .modal.active {
+    overflow-y: auto
+  }
+
   .modal-button-order {
     font-size: 18px;
   }

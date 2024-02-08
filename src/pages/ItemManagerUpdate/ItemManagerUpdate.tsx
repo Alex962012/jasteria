@@ -28,13 +28,13 @@ export const ItemManagerUpdate = () => {
   const [season, setSeason] = useState<any>("");
   const [yarn, setYarn] = useState<any>("");
   const [label, setLabel] = useState("");
-  let result: string | any[];
-  let productsData;
+  // let result: string | any[];
+  // let productsData;
   const imgContainer: any = [];
-  if (products.items) {
-    productsData = products.items;
-    result = productsData.filter((i: any) => i.title === title);
-  }
+  // if (products.items) {
+  //   productsData = products.items;
+  //   // result = productsData.filter((i: any) => i.title === title);
+  // }
 
   const handleChange = (event: any) => {
     setProduct(event.target.value);
@@ -111,10 +111,10 @@ export const ItemManagerUpdate = () => {
       alert("Введите название");
       return;
     }
-    if (result && result.length > 0) {
-      alert("Такое название уже есть");
-      return;
-    }
+    // if (result && result.length > 0) {
+    //   alert("Такое название уже есть");
+    //   return;
+    // }
 
     if (imageUrl.length > 1) {
       for (let i = 0; i < imageUrl.length; i++) {

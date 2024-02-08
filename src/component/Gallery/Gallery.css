@@ -1,0 +1,53 @@
+.image-react-gallery {
+    width: 100%;
+}
+
+.gallery-container {
+    max-width: 450px;
+    width: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {}
+
+.image-gallery-svg:hover {
+    color: var(--price-color) !important;
+}
+
+.image-gallery-svg:hover:focus {
+    color: var(--price-color) !important;
+}
+
+.image-gallery-icon:hover,
+:focus.image-gallery-svg {
+    color: var(--price-color) !important;
+}
+
+.image-gallery-svg:hover:active {
+    outline: 0px solid green !;
+    color: var(--price-color) !important;
+}
+
+.image-gallery-svg {
+    height: 60px !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .image-react-gallery {
+        max-width: 350px;
+        height: 466px;
+    }
+
+    .gallery-container {
+        max-width: 400px;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    .gallery-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+}
