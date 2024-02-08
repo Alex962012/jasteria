@@ -2,6 +2,7 @@ import "./Brand.css";
 export const Brand = () => {
   return (
     <div>
+      <div className="brand-image"></div>
       <h1 className="brand-title"> Привет, мой дорогой мечтатель! </h1>
       <h2 className="brand-subtitle">
         Меня зовут Юлия Войтенко,
