@@ -1,10 +1,12 @@
 .modal {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,7 +237,7 @@
 }
 
 .modal-content-container {
-  width: 10 0%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 885px) {
@@ -350,14 +352,16 @@
 
 @media only screen and (max-width: 568px) {
   .modal {
-    height: 100svh;
+    /* height: 100svh; */
     /* padding: 0px; */
     /* top: 0; */
+    justify-content: flex-start;
     overflow-y: scroll;
   }
 
   .modal-description-container {
     padding: 0 15px;
+
   }
 
   .modal-label {
@@ -365,9 +369,15 @@
   }
 
   .modal-container {
-    margin: 60px 0 30px 0;
+    margin: auto;
+    overflow-y: scroll;
+    position: relative;
+    flex-shrink: 0;
+
+    /* margin-bottom: 40px; */
     flex-direction: column;
-    width: 70%;
+    align-items: flex-end;
+    width: 90%;
     padding: 0px 0 20px;
   }
 
@@ -381,8 +391,12 @@
     width: 40px;
     position: absolute;
     /* top: 18%; */
-    top: 5%;
-    left: 100%;
+    top: 3%;
+    left: 87%;
+  }
+
+  .modal-description-container {
+    height: 50%;
   }
 
   .modal-content-container {
@@ -408,17 +422,7 @@
   }
 }
 
-@media only screen and (max-width: 538px) {
-  .slider-img {
-    max-width: 69vw;
-  }
-}
 
-@media only screen and (max-width: 493px) {
-  .slider-img {
-    max-width: 70vw;
-  }
-}
 
 
 
