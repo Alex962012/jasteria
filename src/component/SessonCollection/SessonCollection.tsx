@@ -20,7 +20,7 @@ export const SessionCollection = ({
       homeArray.push(el);
     }
   });
-
+  console.log(`isLoading ${isLoading}`);
   return (
     <div className="session-container">
       <div className="session-title-container">

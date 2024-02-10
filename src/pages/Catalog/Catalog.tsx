@@ -2,67 +2,35 @@ import Skeleton from "react-loading-skeleton";
 import { Item, ItemProps } from "../../component/Item/Item";
 import "./Catalog.css";
 import { CategoriesList } from "../../component/CategoriesList/CategoriesList";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  setActiveName,
-  setActiveSeason,
-  setActiveYarn,
-} from "../../redux/slices/filterSlice";
+import { Dispatch, useContext } from "react";
+import { useSelector } from "react-redux";
+
 import { RootState } from "../../redux/store";
+import { categoryContext } from "../../App";
 
 interface ICatalog {
-  isLoading: boolean;
-  setIsLoading: Dispatch<React.SetStateAction<boolean>>;
+  isLoadingCatalog: boolean;
+  setIsLoadingCatalog: Dispatch<React.SetStateAction<boolean>>;
   toggleModal: any;
+  onChangeActiveName: any;
+  onChangeActiveYarn: any;
+  onChangeActiveSeason: any;
 }
 
-export const Catalog = ({ isLoading, setIsLoading, toggleModal }: ICatalog) => {
-  const dispatch = useDispatch();
-  const [itemsCategory, setItemsCategory] = useState([]);
+export const Catalog = ({
+  isLoadingCatalog,
+  toggleModal,
+  onChangeActiveName,
+  onChangeActiveSeason,
+  onChangeActiveYarn,
+}: ICatalog) => {
   const activeName = useSelector((state: RootState) => state.filter.activeName);
   const activeYarn = useSelector((state: RootState) => state.filter.activeYarn);
   const activeSeason = useSelector(
     (state: RootState) => state.filter.activeSeason
   );
 
-  const typeYarn = activeYarn !== "0" ? `yarn=${activeYarn}` : "yarn=0";
-  const typeName = activeName !== "0" ? `type=${activeName}` : "type=0";
-  const typeSeason =
-    activeSeason !== "0" ? `season=${activeSeason}` : "season=0";
-
-  const onChangeActiveName = (i: SetStateAction<string>) => {
-    dispatch(setActiveName(i));
-  };
-  const onChangeActiveYarn = (i: SetStateAction<string>) => {
-    dispatch(setActiveYarn(i));
-  };
-  const onChangeActiveSeason = (i: SetStateAction<string>) => {
-    dispatch(setActiveSeason(i));
-  };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setIsLoading(true);
-    fetch(
-      `https://jasteria.ru/api/newProducts/filter?${typeName}${
-        typeName ? "&" : ""
-      }${typeYarn}${typeYarn ? "&" : ""}${typeSeason}`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        setItemsCategory(res.reverse());
-
-        setIsLoading(false);
-      });
-  }, [typeYarn, typeName, typeSeason, setIsLoading]);
-
-  // let res: any;
-  // console.log(itemsCategory)
-  // if (itemsCategory.length > 0) {
-  //   res = itemsCategory.reverse();
-  // }
-
+  const itemsCategory = useContext(categoryContext);
   return (
     <div className="catalog-wrapper">
       <div className="order-section">
@@ -80,7 +48,7 @@ export const Catalog = ({ isLoading, setIsLoading, toggleModal }: ICatalog) => {
         ></CategoriesList>
 
         <div className="content-order">
-          {isLoading
+          {isLoadingCatalog
             ? [...new Array(3)].map((_, index) => (
                 <Skeleton key={index} className="skelet" count={1} />
               ))

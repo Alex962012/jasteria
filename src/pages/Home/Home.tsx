@@ -28,15 +28,11 @@ export const Home = ({ isLoading, toggleModal }: ItemsProps) => {
       </div>
       <div className="title-section-home">
         <div>
-          {items.length > 0 ? (
-            <SessionCollection
-              items={items}
-              toggleModal={toggleModal}
-              isLoading={isLoading}
-            />
-          ) : (
-            ""
-          )}
+          <SessionCollection
+            items={items}
+            toggleModal={toggleModal}
+            isLoading={isLoading}
+          />
         </div>
         <div className="home-info">
           <div className="home-info-title">Вместе с J.Asteria будь</div>
