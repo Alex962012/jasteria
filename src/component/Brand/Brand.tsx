@@ -5,7 +5,7 @@ export const Brand = () => {
       <div className="brand-image"></div>
       <h1 className="brand-title"> Привет, мой дорогой мечтатель! </h1>
       <h2 className="brand-subtitle">
-        Меня зовут Юлия Войтенко,
+        Меня зовут Юлия,
         <br /> и я свяжу твою мечту!{" "}
       </h2>
       <span className="brand-content">
